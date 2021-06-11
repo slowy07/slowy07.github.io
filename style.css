@@ -70,3 +70,32 @@ a{
     text-decoration: none;
     color: var(--text-color);
 }
+img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/*class css*/
+.section{
+    padding: 3rem 0;
+}
+.section-title{
+    position: relative;
+    font-size: var(--h2-font-size);
+    color: var(--dark-color);
+    margin: var(--mb-4) 0;
+    text-align: center;
+}
+.section-title::after{
+    position: absolute;
+    content: "";
+    width: 32px;
+    height: .18rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 2rem;
+    background-color: var(--first-color);
+}
