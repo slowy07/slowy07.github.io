@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
-    <link rel = "stylesheet" href = "assets/css/style.css">
+    <link rel = "stylesheet" href = "style.css">
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
     <title>Hello!</title>
@@ -15,16 +15,16 @@
     <header class = 'l-header'>
       <nav class="nav bd-grid">
         <div>
-          <a href="#" class = "nav_logo">Arfy slowy</a>
+          <a href="#" class = "nav__logo">Arfy slowy</a>
         </div>
 
-        <div class ="nav_menu" id = "nav-menu">
-          <ul class ="nav__list">
-            <li class ="nav__item"><a href="#home" class="nav__link active">Home</a></li>
-            <li class ="nav__item"><a href="#about" class="nav__link">About</a></li>
-            <li class ="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
-            <li class ="nav__item"><a href="#portfolio" class="nav__link">Portfolio</a></li>
-            <li class ="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+              <li class="nav__item"><a href="#home" class="nav__link active">Home</a></li>
+              <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+              <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
+              <li class="nav__item"><a href="#portfolio" class="nav__link">Portfolio</a></li>
+              <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
           </ul>
         </div>
 
@@ -36,7 +36,65 @@
     </header>
 
     <main class = "l-main">
-      
+      <section class="home" id="home">
+        <div class="home__container bd-grid">
+          <h1 class="home__title"><span>HE</span><br>LLO.</h1>
+          
+          <div class="home__scroll">
+            <a href="#about" class="home__scroll-link"><i class="bx bx-up-arrow-alt"></i>Scroll down</a>
+            <img src="#" alt="" class="home__img">
+          </div>
+        </div>
+      </section>
+
+      <!---about-->
+      <section class="about section" id="about">
+        <h2 class="section-title">About</h2>
+
+        <div class="about__container bd-grid">
+          <div class="about__img">
+            <img src="#" alt="">
+          </div>
+
+          <div>
+            <h2 class="about__subtitle">I'am Arfy slowy</h2>
+            <span class="about__profession">Computer scientist</span>
+            <p class="about__text">
+              hello!, my name arfy slowy, i live in indonesia at aceh, a peacefully city with friendly people. i like programming and networking since 2009, because my uncle make something magic with his computer,at 2019 i start intern on google for few month, and now i still coding for my hobby.
+            </p>
+            
+            <div class="about__social">
+              <a href="https://www.github.com/slowy07" class="about__social-icon"><i class="bx bxl-github"></i></a>
+              <a href="https://www.instagram.com/arfy.slowy/" class="about__social-icon"><i class="bx bxl-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="skill-section" id="skills">
+        <h2 class="section-title">Skill</h2>
+
+        <div class="skills__container bd-grid">
+          <div class="skills__box">
+            <h3 class="skills__subtitle">Development</h3>
+            <span class="skills__name">Python</span>
+            <span class="skills__name">Javascript</span>
+            <span class="skills__name">C++</span>
+            <span class="skills__name">Java</span>
+            <span class="skills__name">Flutter</span>
+
+            <h3 class="skills__subtitle">Design</h3>
+            <span class="skills__name">Figma</span>
+            <span class="skills__name">Adobe XD</span>
+            <span class="skills__name">Adobe Illustrator</span>
+          </div>
+
+          <div class="skills__img">
+            <img src="#" alt="">
+          </div>
+        </div>
+      </section>
+
     </main>
   </body>
 
