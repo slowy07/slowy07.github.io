@@ -11,18 +11,18 @@
 
 <body>
     <!--navigation bar-->
-    <div class="navbar-fixed">
+    <div id="home" class="navbar-fixed">
         <nav class="navigation">
             <div class="container">
                 <div class="nav-wrapper">
-                    <a href="index.html" class="brand-logo">
+                    <a href="#home" class="brand-logo">
                         <img src="logo.png" class="logo-image">
                     </a>
-                    <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                    <a href="#home" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
                         <li><a href="#about">About</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Project</a></li>
+                        <li><a href="#service">Services</a></li>
+                        <li><a href="#partner">partner</a></li>
                         <li><a href="#">Contact</a></li>
                     </ul>
                 </div>
@@ -32,8 +32,8 @@
     <!--side navigation-->
     <ul class="sidenav" id="mobile-nav">
         <li><a href="#about">About</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Project</a></li>
+        <li><a href="#service">Services</a></li>
+        <li><a href="#partner">Partner</a></li>
         <li><a href="#">Contact</a></li>
     </ul>
     <!---end navigation bar-->
@@ -56,7 +56,7 @@
         <div class="container first">
             <div class="row">
                 <h3 class="center">About us</h3>
-                <div class="col m6">
+                <div class="col s2 m6 s12">
                     <h5>History</h5>
                     <p>
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has
@@ -66,18 +66,53 @@
                 </div>
                 <div class="col m6">
                     <img src="history-image.jpg" class="responsive-img">
-                </div>">
+                </div>
             </div>
         </div>
         <!--end container first-->
         <!--second container-->
-        <div class="container second">
-            <div class="row">
+        <div id="service" class="container-second">
+            <div class="row fade-in">
                 <h3 class="center">our services</h3>
+                <div class="col s12 m6 l6 center">
+                    <i class="material-icons medium">spa</i>
+                    <h4 class="center">Health</h4>
+                    <p>
+                        Don't tree every thing also darkness appear be open sea evening, his lesser rule second lights it air herb may fruitful darkness spirit. Replenish which yielding under light sea him set. Created, have herb. Gathering may second make morning seasons cattle
+                        together cattle there thing night dominion. Tree set itself created made Morning replenish day midst dry of set. Moved void, seed rule beast very moving let.
+                    </p>
+                </div>
+                <div class="col s12 m6 l6 center">
+                    <i class="material-icons medium">child_care</i>
+                    <h4>Good for all</h4>
+                    <p>
+                        Don't tree every thing also darkness appear be open sea evening, his lesser rule second lights it air herb may fruitful darkness spirit. Replenish which yielding under light sea him set. Created, have herb. Gathering may second make morning seasons cattle
+                        together cattle there thing night dominion. Tree set itself created made Morning replenish day midst dry of set. Moved void, seed rule beast very moving let.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
-    <!--end of about history-->
+    <div class="parallax-container">
+        <div class="parallax">
+            <img src="partner-image.jpg">
+        </div>
+        <div id="partner" class="container-third">
+            <div class="row center">
+                <div class="col s12">
+                    <h3 class="center">our partner</h3>
+                </div>
+                <div class="col s12 m6 l6">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/368px-Google_2015_logo.svg.png" class="img-responsive">
+                </div>
+                <div class="col s12 m6 l6">
+                    <img src="https://www.backbase.com/wp-content/uploads/2020/05/Microsoft-Logo-PNG-Transparent.png" class="img-responsive">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end of about history and about-->
+    <!--partner-->
 
     <script type="text/javascript" src="materialize.min.js"></script>
     <script type="text/javascript" src="script.js"></script>
