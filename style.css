@@ -3,7 +3,7 @@
 
 /*color var*/
 
-:root {
+/* :root {
     --main-color: #e02f6b;
     --blue: #0000ff;
     --blue-dark: #18293c;
@@ -19,7 +19,7 @@
     --backdrop-filter-blur: blur(5px);
     --poppins: "Poppins", sans-serif;
     
-}
+} */
 
 
 /*global settings */
@@ -28,9 +28,9 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    font-family: "Poppins", sans-serif;
     outline: none;
     text-decoration: none;
-    font-family: var(--poppins);
     font-size: 62.5%;
     overflow: hidden;
     outline: none;
@@ -48,12 +48,12 @@ body{
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    background: linear-gradient(var(--green), var(--light-red));
+    background: linear-gradient(#2F7336, #AA3A38);
     padding: 5.5rem;
 }
 header{
     width: 35rem;
-    background: var(--white-alpha-25);
+    background: rgba(255,255,255, .2);
     box-shadow: 0 1rem 2rem rgba(0.0,0,.3);
     backdrop-filter: blur(.4rem);
     text-align: center;
@@ -76,13 +76,13 @@ header .user img{
 
 header .user .name{
     font-size: 3rem;
-    color: var(--white);
+    color: #fff;
     padding: .5rem 0;
 }
 
 header .user .post{
     font-size: 1.8rem;
-    color: var(--white);
+    color: #ffff;
     padding: .5rem 0;
     font-weight: lighter;
 }
@@ -107,7 +107,7 @@ header .navbar ul li a{
 }
 
 header .navbar ul li a:hover{
-    background: rgba(255,255,255,.2);
-    color: var(--blue-dark); 
+    background: rgba(237, 126, 9, 0.2);
+    color: #ffff; 
     transition: none;
 }
