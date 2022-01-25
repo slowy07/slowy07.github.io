@@ -1,87 +1,158 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Welcome</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
-        <link rel="shorcut icon" type="image/png" href="https://img.icons8.com/bubbles/20/000000/deathly-hallows.png"/>
-        <link rel="stylesheet" href="https://cdjns.cloudflare.com/ajax/libs/font-awesome/5.12.2/css/all.min.css">
-        <link rel="stylesheet" type="text/css" href="style.css">
-    </head>
-    <body>
-        <div class="portofolio-main">
-            <header>
-                <div class="container">
-                    <nav>
-                        <div class="logo">
-                            <a href="https://slowy07.github.io"><img src="logo.png" alt="logo"></a>
-                        </div>
-                        <div class="toggle-bar">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                        <div class="navigation-bar">
-                            <ul>
-                                <li><a href="#stillthingking">about</a></li>
-                                <li><a href="https://github.com/slowy07?tab=repositories">my works</a></li>
-                            </ul>
-                        </div>
-                    </nav>
-                </div>
-            </header>
-            
-            <!-- section -->
-            <div class="main-content">
-                <div class="container">
-                    <div class="main-content-wrapper">
-                        <div class="col-left">
-                            <span>Hi i am arfy slowy</span>
-                            <h1>Computer Scientist</h1>
-                            <p>hello!, my name arfy slowy, i live in indonesia at aceh, a peacefully city with friendly people. i like programming and networking since 2009, because my uncle make something magic with his computer, at 2019 i i start intern and 2021 work on <a href="https://about.google/">Google LLC</a>, and now i still coding for my hobby.</p>
-                            <a href="https://github.com/slowy07?tab=repositories" class="btn-main">
-                                See my works
-                                <span><img src="arrow-right.svg" alt="arrow_right"></span>
-                            </a>
-                        </div>
-                        <div class="col-right">
-                            <img src="illustration_image.png" alt="display image">
-                        </div>
-                    </div>
-                    
-                    <div class="experience-section">
-                        <div class="experience-inner">
-                            <div class="col">
-                                <h3>8 years</h3>
-                                <p>Programming experience</p>
-                                <p>
-                                    <img src="https://img.icons8.com/color/48/000000/python--v2.png"/>
-                                    <img src="https://img.icons8.com/color/48/000000/java-coffee-cup-logo--v2.png"/>
-                                    <img src="https://img.icons8.com/color/48/000000/javascript--v2.png"/>
-                                    <img src="https://img.icons8.com/color/48/000000/dart.png"/>
-                                    <img src="https://img.icons8.com/color/48/000000/c-plus-plus-logo.png"/>
-                                </p>
-                            </div>
-                            <div class="col">
-                                <h3>30+</h3>
-                                <p>Happy clients</p>
-                            </div>
-                            <div class="col">
-                                <h3>220+</h3>
-                                <p>Projects complete</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+<html lang="en">
+  <head>
+    <title>Arfy Slowy | Software Egineer</title>
+    <meta name="description" content="A software egineer specializing in open source">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jetbrains-mono@1.0.6/css/jetbrains-mono.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/86c060d6eb.js" crossorigin="anonymous"></script>
+  </head>
+
+<body>
+  <div class="container">
+    <section class="info">
+      <div class="info__title">
+        <a href="https://github.com/slowy07"><img class="info__title__pfp" src="https://avatars.githubusercontent.com/u/40540262?v=4" alt="slowy07 github avatar profile picture"></a>
+        <div class="info__title__text">
+          <h1>Arfy Slowy</h1>
+          <div class="info__title_description">
+            Software Egineer
+          </div>
         </div>
-    </body>
-    <script src="jquery.min.js"></script>
-    <script>
-        $('.toggle-bar').on('click', function (event){
-            $('this').toggleClass('open');
-            $('.navigation-bar').slideToggle('200');
-        })
-    </script>
+      </div>
+      
+      <h2>&gt; About Me</h2>
+      
+      <div>
+        I'm an software egineer and quantum computing enthusiast,
+        I llike programming and networking since 2009, because my uncle make something
+        magic with his computer, at 2019 i start intern and 2021 work on <a href="https://about.google/">Google LLC</a>, And now i still coding for my hobby.
+      </div>
+
+      <div class="info__about__location fa-field">
+          <i class="fas fa-map-marker-alt"></i>
+          <div>
+            Aceh, Indonesia
+          </div>
+      </div>
+
+      <h2>&gt; Skills</h2>
+      <div class="fa-field"><i class="fas fa-code"></i>
+        <div>Python, C++, C, Assembly, Golang, java</div>
+      </div>
+      <div class="fa-field"><i class="fas fa-globe"></i>
+        <div>Flutter, Tensorflow, Pytorch, Qiskit</div>
+      </div>
+      <div class="fa-field"><i class="fas fa-desktop"></i>
+          <div>Github, Vscode, Vim, Linux</div>
+      </div>
+
+      <div class="info__cat-div">
+        <div>
+          <h2>&gt; Links</h2>
+          
+          <div class="fa-field">
+            <i class="fa fa-github"></i>
+            <a href="https://github.com/slowy07">
+              Github
+            </a>
+          </div>
+          <div class="fa-field">
+            <i class="fas fa-envelope"></i>
+            <a class="link-split" href="mailto:slowy07@gmail.com">
+              <span>slowy.arfy</span><span>@gmail.com</span>
+            </a>
+          </div>
+        </div>
+        
+        <div class="info__cat">
+            &nbsp;/| ､<br>
+                 (°､ ｡ 7<br>
+            &nbsp;|､  ~ヽ<br>
+            &nbsp;じしf_,)〳 <br>
+            <div class="info__cat__hover-text">
+              hoy :v
+              <div class="info__cat__hover-text__chat"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pacman">
+          <i class="mdi mdi-pac-man pacman__pacman"></i>
+          <i class="mdi mdi-ghost pacman__ghost--red"></i>
+          <i class="mdi mdi-ghost pacman__ghost--orange"></i>
+          <i class="mdi mdi-ghost pacman__ghost--green"></i>
+          <i class="mdi mdi-ghost pacman__ghost--blue"></i>
+          <i class="mdi mdi-ghost pacman__ghost--pink"></i>
+        </div>
+      </section>
+      
+
+      <section class="projects">
+        <div class="projects__title">
+          <h1>Projects</h1>
+          <div class="projects__title__description">
+            Some of my Best Works
+          </div>
+        </div>
+
+        <div class="project-entries">
+          <div class="project project--yellow">
+            <h3>Deep Learning - clifter_highway</h3>
+            <p>Develop Environment for decision making autonomous vehicle</p>
+            <div class="fa-field"><i class="fas fa-hammer"></i>
+                <div>Python</div>
+            </div>
+            <div class="fa-field"><i class="fab fa-github"></i>
+              <a href="https://github.com/slowy07/clifter_highway">Clifter highway</a>
+            </div>
+          </div>
+
+          <div class="project project--green">
+            <h3>Neural Network - Neural Painting</h3>
+            <p>Convert your image to realistic painting with neural network</p>
+            <div class="fa-field"><i class="fas fa-hammer"></i>
+              <div>Python</div>
+            </div>
+            <div class="fa-field"><i class="fab fa-github"></i>
+              <a href="https://github.com/slowy07/neuralPainting">neuralPainting</a>
+            </div>
+          </div>
+
+          <div class="project project--blue">
+            <h3>Quantum Computing</h3>
+            <p>Create and maintain list example and explanation of quantum computing</p>
+            <div class="fa-field"><i class="fas fa-hammer"></i>
+              <div>Python</div>
+            </div>
+            <div class="fa-field"><i class="fab fa-github"></i>
+              <a href="https://github.com/slowy07/quantum_computing">quantum_computing</a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </div>
+
+	<footer>
+		<div class="footer-container">
+			<div class="footer__left">
+				<div><i class="fas fa-copyright"></i> 2022 Arfy Slowy. <br class="footer-break">All rights reserved.</div>
+			</div>
+        <div class="footer__right">
+          <a href="https://github.com/slowy07/slowy07.github.io/">
+            <i class="fab fa-github"></i> Source Code
+          </a>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
+
+          
