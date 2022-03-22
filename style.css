@@ -2,6 +2,9 @@
 * {
     font-family: "JetBrains Mono";
     scroll-behavior: smooth;
+}
+
+a {
     text-decoration: none;
 }
 
@@ -14,8 +17,12 @@ nav{
     background-color: #3B4252;
 }
 
-nav .container-fluid a {
+nav .navbar .container-fluid .nav-link {
     color: #D8DEE9;
+}
+
+nav .container-fluid .collapse .navbar-nav a {
+    font-size: 0.9rem;
 }
 
 section .container-fluid .home-text .home-text-color {
