@@ -14,12 +14,37 @@ nav{
     background-color: #3B4252;
 }
 
-nav .container-lg a {
+nav .container-fluid a {
     color: #D8DEE9;
 }
 
+section .container-fluid .home-text .home-text-color {
+    color: #88C0D0;
+}
+
+section .container-lg .row .about-text-programming b {
+    color: #D08770;
+}
+
+#about {
+    background-color:#434C5E;
+}
+
+#volunteering-expericence {
+    background-color:#434C5E;
+}
+
+#certification {
+    background-color:#434C5E;
+}
+
+
 section a {
     color: #88C0D0;
+}
+
+section .programming .language {
+    color: #D08770;
 }
 
 section .mb-4 {
@@ -39,4 +64,8 @@ section .row .about-text .bolding-text {
 
 section i {
     color: #A3BE8C;
+}
+
+section img .apple-icon {
+    color: #bdc3c7;
 }
