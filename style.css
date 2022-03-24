@@ -13,6 +13,10 @@ body {
     color: #D8DEE9;
 }
 
+body p {
+    text-align: justify;
+}
+
 nav{
     background-color: #3B4252;
 }
