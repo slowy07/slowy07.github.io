@@ -1,111 +1,129 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,600;0,700;0,800;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,600;0,700;0,800;1,700&display=swap");
 * {
-    font-family: "JetBrains Mono";
-    scroll-behavior: smooth;
+  font-family: "JetBrains Mono";
+  scroll-behavior: smooth;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 body {
-    background-color: #2E3440;
-    color: #D8DEE9;
+  background-color: #2e3440;
+  color: #d8dee9;
+  overflow-x: hidden;
 }
 
 body p {
-    text-align: justify;
+  text-align: justify;
 }
 
-nav{
-    background-color: #3B4252;
+nav {
+  background-color: #3b4252;
 }
 
 nav .navbar .container-fluid .nav-link {
-    color: #D8DEE9;
+  color: #d8dee9;
 }
 
 nav .container-fluid .collapse .navbar-nav a {
-    font-size: 0.9rem;
+  font-size: 0.9rem;
 }
 
 section .container-fluid .home-text .home-text-color {
-    color: #88C0D0;
+  color: #88c0d0;
 }
 
 section .container-lg .row .about-text-programming b {
-    color: #D08770;
+  color: #d08770;
 }
 
 .typed::after {
-    content: '<';
-    display: inline;
-    -webkit-animation: blink 0.7s infinite;
-    -moz-animation: blink 0.7s infinite;
-    animation: blink 0.7s infinite;
+  content: "<";
+  display: inline;
+  -webkit-animation: blink 0.7s infinite;
+  -moz-animation: blink 0.7s infinite;
+  animation: blink 0.7s infinite;
 }
 
 .typed-cursor {
-    opacity: 0;
-    display: none;
+  opacity: 0;
+  display: none;
 }
 
-@keyframes blink{
-    0% { opacity:1; }
-    50% { opacity:0; }
-    100% { opacity:1; }
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
-@-webkit-keyframes blink{
-    0% { opacity:1; }
-    50% { opacity:0; }
-    100% { opacity:1; }
+@-webkit-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
-@-moz-keyframes blink{
-    0% { opacity:1; }
-    50% { opacity:0; }
-    100% { opacity:1; }
+@-moz-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 #about {
-    background-color:#434C5E;
+  background-color: #434c5e;
 }
 
 #volunteering-expericence {
-    background-color:#434C5E;
+  background-color: #434c5e;
 }
 
 #certification {
-    background-color:#434C5E;
+  background-color: #434c5e;
 }
 
-
 section a {
-    color: #88C0D0;
+  color: #88c0d0;
 }
 
 section .programming .language {
-    color: #D08770;
+  color: #d08770;
 }
 
 section .mb-4 {
-    text-transform: capitalize;
-    font-weight: 600;
-    color: #EBCB8B;
+  text-transform: capitalize;
+  font-weight: 600;
+  color: #ebcb8b;
 }
 
 section .container-lg .section-title h2 {
-    color: #D8DEE9;
-    text-transform: capitalize;
+  color: #d8dee9;
+  text-transform: capitalize;
 }
 
 section .row .about-text .bolding-text {
-    color: #D08770;
+  color: #d08770;
 }
 
 section i {
-    color: #A3BE8C;
+  color: #a3be8c;
 }
 
 section img .apple-icon {
-    color: #bdc3c7;
+  color: #bdc3c7;
 }
