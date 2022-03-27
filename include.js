@@ -19,22 +19,13 @@ $(function () {
   });
 });
 
-const carouselImg = document.querySelectorAll(".carousel-item img");
+document.addEventListener( 'DOMContentLoaded', function() {
+    var splide = new Splide( '.splide', {
+      direction: 'ttb',
+      height: '35rem',
+      autoWidth: true,
+      wheel: true,
+    });
+    splide.mount();
+  } );
 
-carouselImg.forEach((img, index) => {
-  if (window.innerWidth > 1400) {
-    img.style.height = "40rem";
-    if (index !== 3 && index !== 4) {
-      img.style.width = "30rem !important";
-    } else {
-      img.style.width = "37.5rem !important";
-    }
-  } else if (window.innerWidth < 1400) {
-    img.style.height = "10rem";
-    if (index !== 3 && index !== 4) {
-      img.style.width = "5rem !important";
-    } else {
-      img.style.width = "7.5rem !important";
-    }
-  }
-});
