@@ -29,7 +29,9 @@ document.addEventListener( 'DOMContentLoaded', function() {
     splide.mount();
   } );
 
-document.addEventListener( 'DOMContentLoaded', function() {
-  var splide = new Splide( '.splide__01' );
-  splide.mount();
+document.addEventListener( 'DOMContentLoaded', function () {
+  new Splide( '#image-slider', {
+    cover      : false,
+    heightRatio: 1.3,
+  } ).mount();
 } );
