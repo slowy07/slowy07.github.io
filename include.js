@@ -29,3 +29,7 @@ document.addEventListener( 'DOMContentLoaded', function() {
     splide.mount();
   } );
 
+document.addEventListener( 'DOMContentLoaded', function() {
+  var splide = new Splide( '.splide__01' );
+  splide.mount();
+} );
