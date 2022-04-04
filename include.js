@@ -29,9 +29,20 @@ document.addEventListener( 'DOMContentLoaded', function() {
     splide.mount();
   } );
 
+// document.addEventListener( 'DOMContentLoaded', function() {
+//   var splide = new Splide( '.splide_image', {
+//     direction: 'ttb',
+//     height: '50rem',
+//     autoWidth: true,
+//     wheel: true,
+//   });
+//   splide.mount();
+// } );
+
+
 document.addEventListener( 'DOMContentLoaded', function () {
   new Splide( '#image-slider', {
-    cover      : false,
+    cover : true,
     heightRatio: 1.3,
   } ).mount();
 } );

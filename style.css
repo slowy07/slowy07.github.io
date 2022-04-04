@@ -130,6 +130,6 @@ section img .apple-icon {
 }
 
 .drawing .splide__slide img {
-  width: 100%;
-  height: auto;
+  width: 350px !important;
+  height: 500px !important;
 }
