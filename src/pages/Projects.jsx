@@ -3,7 +3,6 @@ import { AiFillHtml5 } from "@react-icons/all-files/ai/AiFillHtml5";
 import { BsFiles } from "@react-icons/all-files/bs/BsFiles";
 import { GoTriangleDown } from "@react-icons/all-files/go/GoTriangleDown";
 import { GrReactjs } from "@react-icons/all-files/gr/GrReactjs";
-import { RiVuejsFill } from "@react-icons/all-files/ri/RiVuejsFill";
 import { SiAngular } from "@react-icons/all-files/si/SiAngular";
 import { SiBlender } from "@react-icons/all-files/si/SiBlender";
 import { SiNextDotJs } from "@react-icons/all-files/si/SiNextDotJs";
@@ -81,28 +80,6 @@ export default function Projects() {
               >
                 <SiC />
                 <span>C</span>
-              </button>
-            </div>
-            <div className="flex items-center gap-6 ">
-              <button
-                className={`flex items-center gap-2.5 cursor-pointer transition-colors hover:text-white w-full ${
-                  filter === "ReactJS" ? "text-white" : "text-[#607B96]"
-                }`}
-                onClick={() => setFilter("ReactJS")}
-              >
-                <GrReactjs />
-                <span>ReactJS</span>
-              </button>
-            </div>
-            <div className="flex items-center gap-6">
-              <button
-                className={`flex items-center gap-2.5 cursor-pointer transition-colors hover:text-white w-full ${
-                  filter === "Vue" ? "text-white" : "text-[#607B96]"
-                }`}
-                onClick={() => setFilter("Vue")}
-              >
-                <RiVuejsFill />
-                <span>Vue</span>
               </button>
             </div>
             <div className="flex items-center gap-6">

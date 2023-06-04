@@ -84,8 +84,7 @@ function MyBio({ closeBio }) {
       <div className="overflow-y-auto scrollbar-thin h-full">
         <CopyBlock
           language={`python`}
-          text={`
-name: str = "Arfy Slowy"
+          text={`name: str = "Arfy Slowy"
 location: str = "Aceh, Indonesia"
 
 hobbies: List = [
@@ -93,7 +92,24 @@ hobbies: List = [
   "Dota",
   "Film"
 ]
-print("test")
+
+volunteering: dict = {
+  "Bellshade": "owner 1st indonesia github organization about basic,advance and expert programming course",
+  "Intel": """contributor and become volunteer on Data Flow Facilitator for Machine Learning, 
+          its project to makes it easy to generate datasets, train and use machine learning models, 
+          and integrate machine learning into new or existing applications. 
+          It provides APIs for dataset generation, storage, and model definition.""",
+  "Microsoft": """volunteer on a set of libraries for analyzing HotSpot Java garbage collection (GC) 
+              log files. The toolkit parses GC log files into discrete events and provides an API 
+              for aggregating data from those events. This allows the user to create arbitrary and 
+              complex analyses of the state of managed memory in the Java Virtual Machine (JVM) 
+              represented by the garbage collection log."""
+  "Microsoft": """voluenteer on AI-oriented quantitative investment platform, which aims to realize 
+              the potential, empower the research, and create the value of AI technologies in 
+              quantitative investment. It contains the full ML pipeline of data processing, 
+              model training, back-testing; and covers the entire chain of quantitative 
+              investment: alpha seeking, risk modeling, portfolio optimization, and order execution."""
+}
           `}
           showLineNumbers={true}
           theme={atomOneDark}
@@ -131,7 +147,7 @@ function Work({ closeWork }) {
         <CopyBlock
           language={`python`}
           text={`# Work Information
-profession: str = "Software engineer",
+profession: str = "Software engineer"
 employer: str = "Google LLC"
 
 # Most important skills
@@ -143,7 +159,7 @@ languanges: list = [
   "Rust",
   "Golang"
 ]
-favorite_libs: List = [
+favorite_libs: list = [
   "Tensorflow",
   "Pytorch",
   "Cirq",

@@ -69,6 +69,8 @@ export default function Home() {
                     .deleteAll()
                     .typeString("Artificial intelligence_")
                     .pauseFor(500)
+                    .deleteAll()
+                    .typeString("Love quantum computing_")
                     .start();
                 }}
               />
@@ -103,10 +105,10 @@ export default function Home() {
             </div>
 
             <div className="w-1/2 h-full flex flex-col items-center justify-center">
-              <div className="bg-[#01142330] rounded-lg p-3 text-white mb-5">
-                <div className="mb-4">
-                  <p>// use keyboard</p>
-                  <p>// arrows to play</p>
+              <div className="bg-[#01142330] rounded-lg p-5 text-white mb-5">
+                <div className="mb-5">
+                  <p># use keyboard</p>
+                  <p># arrows to play</p>
                 </div>
 
                 <div className="grid grid-cols-3 grid-rows-2 gap-1">
@@ -153,7 +155,7 @@ export default function Home() {
               </div>
 
               <div className="self-start text-white">
-                <p>// your score : {score}</p>
+                <p># your score : {score}</p>
               </div>
             </div>
 

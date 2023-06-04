@@ -33,6 +33,13 @@
     "technology": "C",
     "image": "../projects/quinn.webp",
     "link": "https://github.com/slowy07/quinn"
+  },
+  {
+    "title": "Enola",
+    "description": "implementation of field randience photo upsampling, currently working on it",
+    "technology": "C",
+    "image": "../projects/enola.webp",
+    "link": "https://github.com/slowy07/enola"
   }
 
 ]

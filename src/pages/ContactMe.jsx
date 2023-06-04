@@ -1,16 +1,12 @@
 import emailjs from "@emailjs/browser";
 import { Popover, Transition } from "@headlessui/react";
 import { AiOutlineClose } from "@react-icons/all-files/ai/AiOutlineClose";
-import { FiInstagram } from "@react-icons/all-files/fi/FiInstagram";
 import { GoTriangleDown } from "@react-icons/all-files/go/GoTriangleDown";
 import { GrLinkedinOption } from "@react-icons/all-files/gr/GrLinkedinOption";
-import { HiExternalLink } from "@react-icons/all-files/hi/HiExternalLink";
-import { ImSteam } from "@react-icons/all-files/im/ImSteam";
-import { MdCall } from "@react-icons/all-files/md/MdCall";
 import { MdEmail } from "@react-icons/all-files/md/MdEmail";
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
-import { CopyBlock, nord } from "react-code-blocks";
+import { CopyBlock, atomOneDark } from "react-code-blocks";
 
 export default function ContactMe() {
   const d = new Date();
@@ -161,21 +157,18 @@ export default function ContactMe() {
               <div className="hidden lg:block w-1/2 h-full">
                 <div className="flex items-center justify-start overflow-hidden h-full">
                   <CopyBlock
-                    language={`jsx`}
-                    text={`const button = document.querySelector('#sendBtn');
+                    language={`python`}
+                    text={`def running() -> None:
+  message: list = [
+	  name: str =  "John Doe",
+	  email: str = "johndoe@gmail.com",
+	  message: str = "Hey!",
+	  date = "${d.getDate()} ${month[d.getMonth()]} ${d.getFullYear()}"
+  ]
 
-const message = {
-	name: "John Doe",
-	email: "johndoe@gmail.com",
-	message: "Hey!",
-	date: "${d.getDate()} ${month[d.getMonth()]} ${d.getFullYear()}"
-}
-
-button.addEventListener('click', () => {
-	form.send(message);
-})`}
+running()`}
                     showLineNumbers={true}
-                    theme={nord}
+                    theme={atomOneDark}
                     wrapLines={true}
                     codeBlock
                   />
@@ -264,28 +257,6 @@ function FindMeAlso() {
           />
           <span>find-me-also</span>
         </Popover.Button>
-
-        <Transition
-          show={isOpen}
-          enter="transition ease-out duration-200"
-          enterFrom="opacity-0 -translate-y-1"
-          enterTo="opacity-100 translate-y-0"
-          leave="transition ease-linear duration-150"
-          leaveFrom="opacity-100 translate-y-0"
-          leaveTo="opacity-0 -translate-y-1"
-        >
-          <Popover.Panel className="p-4 w-full flex flex-col gap-1">
-            <a
-              href="https://twitch.tv/wisnoob"
-              className="text-[#607B96] hover:text-white inline-flex items-center gap-2.5 transition-colors"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <HiExternalLink />
-              <span>Twitch</span>
-            </a>
-          </Popover.Panel>
-        </Transition>
       </>
     </Popover>
   );
