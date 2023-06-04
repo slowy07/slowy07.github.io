@@ -1,0 +1,87 @@
+{
+  "gearType": [
+    {
+      "gear": "Hardware / Computers",
+      "gearList": [
+        {
+          "item": "AMD Ryzen 9 5900x (16 Core), 16GB of RAM, RTX 3090, 3TB SSD, 1TB HDD",
+          "desc": "Mostly use for my work and game, hehehe",
+          "type": ["computer"]
+        },
+        {
+          "item": "Lenovo Thinkpad p15 workstation",
+          "desc": "Love thinkpad laptops !",
+          "type": ["computer", "thinkpad"]
+        },
+        {
+          "item": "Steelseries Apex 7",
+          "desc": "Actually i don't know about mechanical keyboard",
+          "type": ["keyboard"]
+        },
+        {
+          "item": "Xtrfy M4 Wireless",
+          "desc": "If you have Trypophobia, don't buy it okay.",
+          "type": ["mouse", "logitech"]
+        }
+      ]
+    },
+    {
+      "gear": "Hardware / Monitors",
+      "gearList": [
+        {
+          "item": "Lenovo G34w-30 34'' VA",
+          "desc": "Hehehe, im still use Lenovo product",
+          "type": ["monitor", "external display"]
+        }
+      ]
+    },
+    {
+      "gear": "Hardware / Audio",
+      "gearList": [
+        {
+          "item": "KZ ZAR",
+          "desc": "Actually i don't use Headset, not like to much",
+          "type": ["headset"]
+        }
+      ]
+    },
+    {
+      "gear": "Software",
+      "gearList": [
+        {
+          "item": "Vscodium",
+          "desc": "I Think more better than original vscode",
+          "type": ["IDE"]
+        },
+        {
+          "item": "VIM (neovim)",
+          "desc": "A BLAZINGLY FAST text editor that i use when am on the terminal.",
+          "type": ["editor"]
+        },
+        {
+          "item": "Alacritty, Kitty",
+          "desc": "Blazing fast fast fast",
+          "type": ["terminal"]
+        }
+      ]
+    },
+    {
+      "gear": "Tooling / Terminal",
+      "gearList": [
+        {
+          "item": "dotfiles",
+          "desc": "My dotfiles are available on my GitHub",
+          "type": ["config"]
+        },
+        {
+          "item": "ZSH",
+          "desc": "I use zsh as my shell"
+        },
+        {
+          "item": "starship",
+          "desc": "Just check on github right now bois, nice one and easy to config"
+        }
+      ]
+    }
+  ]
+}

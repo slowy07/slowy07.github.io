@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Seraphine",
+    "description": "List of all reinforcement learning agents",
+    "technology": "Python",
+    "image": "../projects/seraphine.webp",
+    "link": "https://github.com/slowy07/seraphine"
+  },
+  {
+    "title": "Mary",
+    "description": "environment decision making in autonomous driving",
+    "technology": "Python",
+    "image": "../projects/mary.webp",
+    "link": "https://github.com/slowy07/mary"
+  },
+  {
+    "title": "Aiden",
+    "description": "Simple Operating System creating with assembly",
+    "technology": "Assembly",
+    "image": "../projects/aiden.webp",
+    "link": "https://github.com/slowy07/aiden"
+  },
+  {
+    "title": "Celestine",
+    "description": "Image inpainting with convolutional neural network",
+    "technology": "Python",
+    "image": "../projects/celestine.webp",
+    "link": "https://github.com/slowy07/celestine"
+  },
+  {
+    "title": "Quinn",
+    "description": "Working on biological projects, focused on human genome",
+    "technology": "C",
+    "image": "../projects/quinn.webp",
+    "link": "https://github.com/slowy07/quinn"
+  }
+
+]
