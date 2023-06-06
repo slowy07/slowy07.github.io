@@ -1,13 +1,9 @@
 import { Dialog, Transition } from "@headlessui/react";
-import { AiFillHtml5 } from "@react-icons/all-files/ai/AiFillHtml5";
 import { BsFiles } from "@react-icons/all-files/bs/BsFiles";
 import { GoTriangleDown } from "@react-icons/all-files/go/GoTriangleDown";
-import { GrReactjs } from "@react-icons/all-files/gr/GrReactjs";
-import { SiAngular } from "@react-icons/all-files/si/SiAngular";
-import { SiBlender } from "@react-icons/all-files/si/SiBlender";
-import { SiNextDotJs } from "@react-icons/all-files/si/SiNextDotJs";
 import { SiPython } from "@react-icons/all-files/si/SiPython";
-import { SiC} from "@react-icons/all-files/si/SiC";
+import { SiC } from "@react-icons/all-files/si/SiC";
+import { SiGithub } from "@react-icons/all-files/si/SiGithub";
 import { motion } from "framer-motion";
 import { Fragment, useState } from "react";
 import datas from "../data/ProjectData.json";
@@ -85,23 +81,12 @@ export default function Projects() {
             <div className="flex items-center gap-6">
               <button
                 className={`flex items-center gap-2.5 cursor-pointer transition-colors hover:text-white w-full ${
-                  filter === "Angular" ? "text-white" : "text-[#607B96]"
+                  filter === "OpenSource" ? "text-white" : "text-[#607B96]"
                 }`}
-                onClick={() => setFilter("Angular")}
+                onClick={() => setFilter("OpenSource")}
               >
-                <SiAngular />
-                <span>Angular</span>
-              </button>
-            </div>
-            <div className="flex items-center gap-6">
-              <button
-                className={`flex items-center gap-2.5 cursor-pointer transition-colors hover:text-white w-full ${
-                  filter === "Blender" ? "text-white" : "text-[#607B96]"
-                }`}
-                onClick={() => setFilter("Blender")}
-              >
-                <SiBlender />
-                <span>Blender</span>
+                <SiGithub />
+                <span>Open Source</span>
               </button>
             </div>
           </Transition>
@@ -141,17 +126,14 @@ const Card = ({ data }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   function generateIcon(value) {
-    if (value.includes("NextJS")) {
-      return <SiNextDotJs />;
+    if (value.includes("Python")) {
+      return <SiPython />;
     }
-    if (value.includes("Blender")) {
-      return <SiBlender />;
+    if (value.includes("C")) {
+      return <SiC />;
     }
-    if (value.includes("ReactJS")) {
-      return <GrReactjs />;
-    }
-    if (value.includes("HTML")) {
-      return <AiFillHtml5 />;
+    if (value.includes("OpenSource")) {
+      return <SiGithub />;
     }
   }
 
@@ -241,7 +223,7 @@ const Card = ({ data }) => {
                     </Dialog.Title>
                     <p className="mb-2.5 text-white/80">{data.description}</p>
                     <div className="flex items-center justify-between">
-                      {data.technology.includes("Blender")
+                      {data.technology.includes("Other")
                         ? (
                           <a
                             href={data.link}
@@ -259,12 +241,15 @@ const Card = ({ data }) => {
                             className="text-white/80"
                             rel="noreferrer"
                           >
-                            Demo
+                            View Project
                           </a>
                         )}
 
                       <p className="text-white/80">
                         Tech Stack: {data.technology}
+                      </p>
+                      <p className="text-white/80">
+                        Visibility: {data.visibleProject}
                       </p>
                     </div>
                   </article>
