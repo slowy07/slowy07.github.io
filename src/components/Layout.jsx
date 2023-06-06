@@ -38,9 +38,9 @@ export default function Layout({ children, setIsNavbar, isNavbar }) {
       className="h-screen flex bg-[#010c15] items-center justify-center bg-no-repeat bg-cover bg-center"
       style={{ backgroundImage: `url("black-hole.webp")` }}
     >
-      <div className="custom-size bg-[#101419]/[85%] backdrop-blur-md rounded-lg border border-[#101419] flex justify-between flex-col overflow-hidden">
-        <header className="grid grid-cols-12  text-[#cbced3] border-b border-[#1E2D3D] items-center">
-          <div className="lg:col-span-2 col-span-11 lg:border-r border-[#1E2D3D] py-4 pl-4">
+      <div className="custom-size bg-[#101419]/[80%] backdrop-blur-md rounded-lg border border-[#101419] flex justify-between flex-col overflow-hidden">
+        <header className="grid grid-cols-12  text-[#cbced3] border-b border-[#101419] items-center">
+          <div className="lg:col-span-2 col-span-11 lg:border-r border-[#101419] py-4 pl-4">
             <span>Arfy Slowy</span>
           </div>
 
@@ -49,7 +49,7 @@ export default function Layout({ children, setIsNavbar, isNavbar }) {
             <nav className="flex justify-between items-center">
               <div>
                 <button
-                  className={`px-5 py-4 border-r border-r-[#1E2D3D] border-b-2 h-full transition-all hover:text-white ${
+                  className={`px-5 py-4 border-r border-r-[#101419] border-b-2 h-full transition-all hover:text-white ${
                     isNavbar === "/"
                       ? "border-b-2 border-[#ceac67] text-white"
                       : "border-b-transparent"
@@ -61,7 +61,7 @@ export default function Layout({ children, setIsNavbar, isNavbar }) {
                   _hello
                 </button>
                 <button
-                  className={`px-5 py-4 border-r border-r-[#1E2D3D] border-b-2 h-full transition-all hover:text-white ${
+                  className={`px-5 py-4 border-r border-r-[#101419] border-b-2 h-full transition-all hover:text-white ${
                     isNavbar === "about-me"
                       ? "border-b-2 border-[#ceac67] text-white"
                       : "border-b-transparent"
@@ -73,7 +73,7 @@ export default function Layout({ children, setIsNavbar, isNavbar }) {
                   _about-me
                 </button>
                 <button
-                  className={`px-5 py-4 border-r border-r-[#1E2D3D] border-b-2 h-full transition-all hover:text-white ${
+                  className={`px-5 py-4 border-r border-r-[#101419] border-b-2 h-full transition-all hover:text-white ${
                     isNavbar === "projects"
                       ? "border-b-2 border-[#FEA55F] text-white"
                       : "border-b-transparent"

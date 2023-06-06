@@ -7,9 +7,9 @@ import { SiMarkdown } from "@react-icons/all-files/si/SiMarkdown";
 import { VscCollapseAll } from "@react-icons/all-files/vsc/VscCollapseAll";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
-import { CopyBlock, atomOneDark } from "react-code-blocks";
+import { atomOneDark, CopyBlock } from "react-code-blocks";
 import gearData from "../data/GearData.json";
-import { IoLogoPython} from "@react-icons/all-files/io5/IoLogoPython";
+import { IoLogoPython } from "@react-icons/all-files/io5/IoLogoPython";
 
 export default function AboutMe() {
   const [render, setRender] = useState("my-bio");
@@ -233,7 +233,6 @@ function Gear({ closeGear }) {
         {gearData.gearType.map((data, index) => {
           return <Content title={data.gear} key={index} list={data.gearList} />;
         })}
-        <img src="setup.jpg" alt="My personal setup" />
       </div>
     </motion.div>
   );
