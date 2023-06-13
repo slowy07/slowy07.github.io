@@ -7,7 +7,7 @@ import { SiMarkdown } from "@react-icons/all-files/si/SiMarkdown";
 import { VscCollapseAll } from "@react-icons/all-files/vsc/VscCollapseAll";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
-import { atomOneDark, CopyBlock } from "react-code-blocks";
+import { dracula, CopyBlock } from "react-code-blocks";
 import gearData from "../data/GearData.json";
 import { IoLogoPython } from "@react-icons/all-files/io5/IoLogoPython";
 
@@ -68,7 +68,7 @@ function MyBio({ closeBio }) {
     >
       <div className="w-full">
         <div className="grid grid-cols-12 border-b border-[#101419]">
-          <div className="lg:col-span-2 md:col-span-6 col-span-12  text-white border-r border-[#101419] py-2.5 relative px-4">
+          <div className="lg:col-span-2 md:col-span-6 col-span-12  text-white py-2.5 relative px-4">
             <button
               className="absolute top-1/2 -translate-y-1/2 right-4"
               onClick={() => {
@@ -112,7 +112,7 @@ volunteering: dict = {
 }
           `}
           showLineNumbers={true}
-          theme={atomOneDark}
+          theme={dracula}
           codeBlock
         />
       </div>
@@ -165,7 +165,7 @@ favorite_libs: list = [
   "Cirq",
 ]`}
           showLineNumbers={true}
-          theme={atomOneDark}
+          theme={dracula}
           codeBlock
         />
       </div>

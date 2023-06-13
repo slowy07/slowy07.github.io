@@ -43,9 +43,9 @@ export default function Layout({ children, setIsNavbar, isNavbar }) {
       className="h-screen flex bg-[#010c15] items-center justify-center bg-no-repeat bg-cover bg-center"
       style={{ backgroundImage: `url("black-hole.webp")` }}
     >
-      <div className="custom-size bg-[#101419]/[90%] rounded-lg border border-[#101419] flex justify-between flex-col overflow-hidden">
-        <header className="grid grid-cols-12  text-[#cbced3] border-b border-[#101419] items-center">
-          <div className="lg:col-span-2 col-span-11 lg:border-r border-[#101419] py-4 pl-4">
+      <div className="custom-size bg-[#101419]/[99%] rounded-lg flex justify-between flex-col overflow-hidden">
+        <header className="grid grid-cols-12  text-[#cbced3] items-center">
+          <div className="lg:col-span-2 col-span-11 bg-[#101419] lg:border-r border-[#101419] py-4 pl-4">
             <span>Arfy Slowy</span>
           </div>
 
@@ -54,7 +54,7 @@ export default function Layout({ children, setIsNavbar, isNavbar }) {
             <nav className="flex items-center">
               <div>
                 <button
-                  className={`py-4 border-r border-r-[#101419] border-b-2 h-full transition-all hover:text-white ${
+                  className={`py-4 h-full transition-all hover:text-white ${
                     isNavbar === "/"
                       ? "border-b-2 border-[#ceac67] text-white"
                       : "border-b-transparent"
@@ -165,7 +165,7 @@ export default function Layout({ children, setIsNavbar, isNavbar }) {
                   className={`px-5 py-4 border-b  transition-all w-full text-left ${
                     isNavbar === "projects"
                       ? "border-b-2 border-[#ceac67] text-white"
-                      : "border-b-[#101419]"
+                      : "border-b-white"
                   }`}
                   onClick={() => {
                     setIsNavbar("projects");
@@ -190,7 +190,7 @@ export default function Layout({ children, setIsNavbar, isNavbar }) {
               </div>
 
               <footer className="block lg:hidden">
-                <div className="grid grid-cols-12 px-5 text-[#607B96] border-t border-[#101419]">
+                <div className="grid grid-cols-12 px-2 text-[#607B96] border-t border-[#101419]">
                   <div className="col-span-11 flex items-center"></div>
                   <div className="col-span-1 flex items-center justify-end">
                     <a
