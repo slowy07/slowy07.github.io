@@ -46,6 +46,21 @@
       ]
     },
     {
+      "gear": "Operating System",
+      "gearList": [
+        {
+         "item": "Linux from scratch",
+         "desc": "No use debian or arch, just LFS, yes, LFS",
+         "type": ["OS"]
+        },
+        {
+          "item": "Windows 11",
+          "desc": "Dont't worry, im use only for game",
+          "type": ["OS"]
+        }
+      ]
+    },
+    {
       "gear": "Software",
       "gearList": [
         {
@@ -62,24 +77,6 @@
           "item": "Alacritty, Kitty",
           "desc": "Blazing fast fast fast",
           "type": ["terminal"]
-        }
-      ]
-    },
-    {
-      "gear": "Tooling / Terminal",
-      "gearList": [
-        {
-          "item": "dotfiles",
-          "desc": "My dotfiles are available on my GitHub",
-          "type": ["config"]
-        },
-        {
-          "item": "ZSH",
-          "desc": "I use zsh as my shell"
-        },
-        {
-          "item": "starship",
-          "desc": "Just check on github right now bois, nice one and easy to config"
         }
       ]
     }

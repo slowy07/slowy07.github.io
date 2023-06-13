@@ -66,15 +66,14 @@ export default function ContactMe() {
     >
       <div className="grid grid-cols-12 md:h-full">
         <div className="lg:col-span-2 md:col-span-4 col-span-full">
-          <div className="border-r  border-[#1E2D3D] text-white gap-2.5 relative overflow-hidden h-full">
+          <div className="border-r  border-[#101419] text-white gap-2.5 relative overflow-hidden h-full">
             <Contacts />
-            <FindMeAlso />
           </div>
         </div>
         <div className="lg:col-span-10 md:col-span-8 col-span-full ">
           <div className="w-full h-[95%]">
-            <div className="grid grid-cols-12 border-b border-t md:border-t-0 border-[#1E2D3D]">
-              <div className="lg:col-span-2 md:col-span-4 col-span-5 text-white border-r border-[#1E2D3D] py-2.5 relative px-4">
+            <div className="grid grid-cols-12 border-b border-t md:border-t-0 border-[#101419]">
+              <div className="lg:col-span-2 md:col-span-4 col-span-5 text-white border-r border-[#101419] py-2.5 relative px-4">
                 <button className="absolute top-1/2 -translate-y-1/2 right-4">
                   <AiOutlineClose />
                 </button>
@@ -194,7 +193,7 @@ function Contacts() {
         <Popover.Button
           className={`
                 ${isOpen ? "text-white " : "text-white/50 border-b-0"}
-               flex items-center gap-2.5  border-b border-[#1E2D3D] py-2.5 px-4 w-full`}
+               flex items-center gap-2.5  border-b border-[#101419] py-2.5 px-4 w-full`}
           onClick={openPopover}
         >
           <GoTriangleDown
@@ -231,32 +230,6 @@ function Contacts() {
             </a>
           </Popover.Panel>
         </Transition>
-      </>
-    </Popover>
-  );
-}
-
-function FindMeAlso() {
-  const [isOpen, setIsOpen] = useState(true);
-
-  function openModal() {
-    setIsOpen(!isOpen);
-  }
-
-  return (
-    <Popover>
-      <>
-        <Popover.Button
-          className={`
-                ${isOpen ? "text-white" : "text-white/50 "}
-               flex items-center gap-2.5 border-b border-[#1E2D3D] py-2.5 px-4 w-full border-t`}
-          onClick={openModal}
-        >
-          <GoTriangleDown
-            className={`${isOpen ? "" : "-rotate-90"} transition-all`}
-          />
-          <span>find-me-also</span>
-        </Popover.Button>
       </>
     </Popover>
   );

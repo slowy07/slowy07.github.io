@@ -35,7 +35,7 @@ export default function AboutMe() {
     >
       <div className="lg:grid grid-cols-12 h-full flex flex-col ">
         <div className="col-span-2 grid lg:grid-cols-6">
-          <div className="col-span-6 lg:border-r lg:border-b-0 border-b border-[#1E2D3D] text-white gap-2.5 relative overflow-hidden">
+          <div className="col-span-6 lg:border-r lg:border-b-0 border-b border-[#101419] text-white gap-2.5 relative overflow-hidden">
             <PersonalInfo setRender={setRender} render={render} />
           </div>
         </div>
@@ -67,8 +67,8 @@ function MyBio({ closeBio }) {
       exit={{ x: 50, opacity: 0 }}
     >
       <div className="w-full">
-        <div className="grid grid-cols-12 border-b border-[#1E2D3D]">
-          <div className="lg:col-span-2 md:col-span-6 col-span-12  text-white border-r border-[#1E2D3D] py-2.5 relative px-4">
+        <div className="grid grid-cols-12 border-b border-[#101419]">
+          <div className="lg:col-span-2 md:col-span-6 col-span-12  text-white border-r border-[#101419] py-2.5 relative px-4">
             <button
               className="absolute top-1/2 -translate-y-1/2 right-4"
               onClick={() => {
@@ -129,8 +129,8 @@ function Work({ closeWork }) {
       exit={{ x: 50, opacity: 0 }}
     >
       <div className="w-full">
-        <div className="grid grid-cols-12 border-b border-[#1E2D3D]">
-          <div className="lg:col-span-2 md:col-span-6 col-span-12 text-white border-r border-[#1E2D3D] py-2.5 relative px-4">
+        <div className="grid grid-cols-12 border-b border-[#101419]">
+          <div className="lg:col-span-2 md:col-span-6 col-span-12 text-white border-r border-[#101419] py-2.5 relative px-4">
             <button
               className="absolute top-1/2 -translate-y-1/2 right-4"
               onClick={() => {
@@ -191,7 +191,7 @@ function Gear({ closeGear }) {
                     {data.type?.map((data, index) => {
                       return (
                         <div
-                          className="text-xs bg-[#1b2b3a] py-1 px-2 rounded-full flex items-center gap-1.5 w-max "
+                          className="text-xs bg-[#101419] py-1 px-2 rounded-full flex items-center gap-1.5 w-max "
                           key={index}
                         >
                           <div className="w-1 h-1 rounded-full bg-white" />
@@ -217,8 +217,8 @@ function Gear({ closeGear }) {
       exit={{ x: 50, opacity: 0 }}
     >
       <div className="w-full">
-        <div className="grid grid-cols-12 border-b border-[#1E2D3D]">
-          <div className="lg:col-span-3 md:col-span-6 col-span-12 text-white border-r border-[#1E2D3D] py-2.5 relative px-4">
+        <div className="grid grid-cols-12 border-b border-[#101419]">
+          <div className="lg:col-span-3 md:col-span-6 col-span-12 text-white border-r border-[#101419] py-2.5 relative px-4">
             <button
               className="absolute top-1/2 -translate-y-1/2 right-4"
               onClick={() => closeGear("/")}
@@ -261,7 +261,7 @@ function PersonalInfo({ setRender, render }) {
           <Popover.Button
             className={`
                 ${isOpen ? "text-white" : "text-white/50"}
-               flex items-center gap-2.5 border-b border-[#1E2D3D] py-2.5 px-4 w-full`}
+               flex items-center gap-2.5 border-b border-[#101419] py-2.5 px-4 w-full`}
             onClick={openPopover}
           >
             <GoTriangleDown
