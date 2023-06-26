@@ -225,7 +225,7 @@ export default function Layout({ children, setIsNavbar, isNavbar }) {
             <div className="flex items-center">
               <SiPython className="w-[30px] h-[30px] p-2 bg-[#4d82c8] text-[#d0d3d8]" />
               <div className=" flex items-center bg-[#1f2328] h-[30px]">
-                <p className="px-2 font-light text-sm">portfolio.py</p>
+                <p className="px-2 font-light text-sm">{`${isNavbar === '/' ? 'hello' : isNavbar}.py`}</p>
               </div>
             </div>
             <div className="flex items-center">
