@@ -55,6 +55,14 @@
     "image": "../projects/luna.webp",
     "link": "https://github.com/slowy07/luna"
   },
+    {
+    "title": "Clara",
+    "description": "Development quantum computing package, currently working on it",
+    "technology": "C",
+    "visibleProject": "public",
+    "image": "../projects/clara.png",
+    "link": "https://github.com/slowy07/clara"
+  },
   {
     "title": "Quinn",
     "description": "Working on biological projects, focused on human genome. many problem but im still fix it",
@@ -87,5 +95,6 @@
     "image": "../projects/maro.webp",
     "link": "https://github.com/microsoft/maro"
   }
+  
 
 ]
