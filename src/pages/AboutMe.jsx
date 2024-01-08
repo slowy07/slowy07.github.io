@@ -7,7 +7,8 @@ import { SiMarkdown } from "@react-icons/all-files/si/SiMarkdown";
 import { VscCollapseAll } from "@react-icons/all-files/vsc/VscCollapseAll";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
-import { dracula, CopyBlock } from "react-code-blocks";
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import gearData from "../data/GearData.json";
 import { IoLogoPython } from "@react-icons/all-files/io5/IoLogoPython";
 
@@ -82,39 +83,31 @@ function MyBio({ closeBio }) {
         </div>
       </div>
       <div className="overflow-y-auto scrollbar-thin h-full">
-        <CopyBlock
-          language={`python`}
-          text={`name: str = "Arfy Slowy"
-location: str = "Aceh, Indonesia"
-
-hobbies: List = [
+        <SyntaxHighlighter language="python" style={atomOneDark} showLineNumbers>
+      {
+`name: str = "arfy slowy"
+hobbies: list = [
   "Coding",
   "Dota",
-  "Film"
+  "Film",
 ]
 
 volunteering: dict = {
-  "Bellshade": "owner 1st indonesia github organization about basic,advance and expert programming course",
-  "Intel": """contributor and become volunteer on Data Flow Facilitator for Machine Learning, 
-          its project to makes it easy to generate datasets, train and use machine learning models, 
-          and integrate machine learning into new or existing applications. 
-          It provides APIs for dataset generation, storage, and model definition.""",
-  "Microsoft": """volunteer on a set of libraries for analyzing HotSpot Java garbage collection (GC) 
-              log files. The toolkit parses GC log files into discrete events and provides an API 
-              for aggregating data from those events. This allows the user to create arbitrary and 
-              complex analyses of the state of managed memory in the Java Virtual Machine (JVM) 
-              represented by the garbage collection log."""
-  "Microsoft": """voluenteer on AI-oriented quantitative investment platform, which aims to realize 
-              the potential, empower the research, and create the value of AI technologies in 
-              quantitative investment. It contains the full ML pipeline of data processing, 
-              model training, back-testing; and covers the entire chain of quantitative 
-              investment: alpha seeking, risk modeling, portfolio optimization, and order execution."""
+  "Bellshade" : "owner 1st indonesia github organization about basic, advance and expret programming course",
+  "Intel"     : """contributor and become volunteer on Data Flow Facilitator for Machine Learning, 
+                  its project to makes it easy to generate datasets, train and use machine learning models, 
+                  and integrate machine learning into new or existing applications. 
+                  It provides APIs for dataset generation, storage, and model definition.""",
+  "Microsoft" : """volunteer on a set of libraries for analyzing HotSpot Java garbage collection (GC) 
+                  log files. The toolkit parses GC log files into discrete events and provides an API 
+                  for aggregating data from those events. This allows the user to create arbitrary and 
+                  complex analyses of the state of managed memory in the Java Virtual Machine (JVM) 
+                  represented by the garbage collection log."""
 }
-          `}
-          showLineNumbers={true}
-          theme={dracula}
-          codeBlock
-        />
+            `
+            
+          }
+    </SyntaxHighlighter>
       </div>
     </motion.div>
   );
@@ -144,30 +137,28 @@ function Work({ closeWork }) {
         </div>
       </div>
       <div className="overflow-y-auto scrollbar-thin h-full">
-        <CopyBlock
-          language={`python`}
-          text={`# Work Information
-profession: str = "Software engineer"
-employer: str = "Google LLC"
-
-# Most important skills
-languanges: list = [
+        <SyntaxHighlighter language="python" style={atomOneDark} showLineNumbers>
+      {
+`# work information
+profession: str = "Software Engineer"
+languages: list = [
   "Python",
   "C++",
   "C",
   "Assembly",
   "Rust",
-  "Golang"
+  "Zig",
 ]
+
 favorite_libs: list = [
   "Tensorflow",
   "Pytorch",
-  "Cirq",
-]`}
-          showLineNumbers={true}
-          theme={dracula}
-          codeBlock
-        />
+  "Cirq"
+]
+            `
+            
+          }
+    </SyntaxHighlighter>
       </div>
     </motion.div>
   );
