@@ -9,7 +9,7 @@
           "type": ["computer"]
         },
         {
-          "item": "Lenovo Thinkpad p15 workstation",
+          "item": "Lenovo Thinkpad p15 Gen 2 workstation",
           "desc": "Love thinkpad laptops !",
           "type": ["computer", "thinkpad"]
         },
@@ -74,7 +74,7 @@
           "type": ["editor"]
         },
         {
-          "item": "Alacritty, Kitty",
+          "item": "Alacritty, Kitty with Starship",
           "desc": "Blazing fast fast fast",
           "type": ["terminal"]
         }

@@ -24,60 +24,12 @@
     "link": "https://github.com/slowy07/aiden"
   },
   {
-    "title": "Celestine",
-    "description": "Image inpainting with convolutional neural network",
-    "technology": "Python",
-    "visibleProject": "Public",
-    "image": "../projects/celestine.webp",
-    "link": "https://github.com/slowy07/celestine"
-  },
-  {
-    "title": "Fatima",
-    "description": "Fatima is speech recognition for arabic, and classification and text-to-speech using lots advanced models like wave2vec and own created model (FatimaSpeech). im still working on it",
-    "technology": "Python",
-    "visibleProject": "public",
-    "image": "../projects/fatima.webp",
-    "link": "https://github.com/slowy07/fatima"
-  },
-  {
-    "title": "Ava",
-    "description": "focused on video harmonization that automatically generate realistic and dramatic sky backgrounds in videos with controllable styles. currently still working to fix it cause many bugs i think hahahaha",
-    "technology": "Python",
-    "visibleProject": "Private",
-    "image": "../projects/ava.webp",
-    "link": "https://github.com/slowy07/ava"
-  },
-  {
-    "title": "Luna",
-    "description": "text to image generation with stable diffusion, still maintain this project by upgrade to create my diffusion model",
-    "technology": "Python",
-    "visibleProject": "Public",
-    "image": "../projects/luna.webp",
-    "link": "https://github.com/slowy07/luna"
-  },
-    {
     "title": "Clara",
     "description": "Development quantum computing package, currently working on it",
     "technology": "C",
     "visibleProject": "public",
     "image": "../projects/clara.png",
     "link": "https://github.com/slowy07/clara"
-  },
-  {
-    "title": "Quinn",
-    "description": "Working on biological projects, focused on human genome. many problem but im still fix it",
-    "technology": "C",
-    "visibleProject": "Public",
-    "image": "../projects/quinn.webp",
-    "link": "https://github.com/slowy07/quinn"
-  },
-  {
-    "title": "Enola",
-    "description": "implementation of field randience photo upsampling, currently working on it",
-    "technology": "C",
-    "visibleProject": "Private",
-    "image": "../projects/enola.webp",
-    "link": "https://github.com/slowy07/enola"
   },
   {
     "title": "Geemap",
@@ -95,6 +47,4 @@
     "image": "../projects/maro.webp",
     "link": "https://github.com/microsoft/maro"
   }
-  
-
 ]
