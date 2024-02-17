@@ -92,20 +92,40 @@ hobbies: list = [
   "Film",
 ]
 
-volunteering: dict = {
-  "Bellshade" : "owner 1st indonesia github organization about basic, advance and expret programming course",
-  "Intel"     : """contributor and become volunteer on Data Flow Facilitator for Machine Learning, 
-                  its project to makes it easy to generate datasets, train and use machine learning models, 
-                  and integrate machine learning into new or existing applications. 
-                  It provides APIs for dataset generation, storage, and model definition.""",
-  "Microsoft" : """volunteer on a set of libraries for analyzing HotSpot Java garbage collection (GC) 
-                  log files. The toolkit parses GC log files into discrete events and provides an API 
-                  for aggregating data from those events. This allows the user to create arbitrary and 
-                  complex analyses of the state of managed memory in the Java Virtual Machine (JVM) 
-                  represented by the garbage collection log."""
-}
+# voluenteering
+
+def intel(start_year: int, role: str) -> str:
+  return ( 
+    f"Volunteering on {start_year} and working as {role} for data flow facilicator for machine learning, "
+     + "the project focused to generate easy dataset, train and use machine learning models"
+  )
+
+def google_earth_community(start_year: int, role: str) -> str:
+  return ( 
+    f"Volunteering on {start_year} and working as {role} for package for interactive geospaital "
+     + "analysis and visualization with Google Earth Engine"
+
+def microsoft(start_year: int, role: str) -> str:
+  return (
+    f"Volunteering on {start_year} and working as {role} for AI-oriented quantitative investment "
+      + "platform, which aims to realize the potential, empower the research, and create the value "
+      + "of AI technologies in quantitative investment."
+  )
+
+def bellshade(start_year: int, role: str) -> str:
+  return (
+    f"Start from {start_year} and working as {role} for organization about basic,advance and " +
+     + "expert programming course and make some open source library"
+  )
+
+print(f"hello my name {name}")
+print(intel(2021, "software engineer")) # not volunteer anymore
+print(google_earth_community(2021, "software engineer")) # still maintain
+print(microsoft(2023, "software engineer")) # not volunteer anymore
+print(bellshade(2021, "owner")) # still maintain
+print(f"My Hobby: {', '.join(hobbies)}")
+
             `
-            
           }
     </SyntaxHighlighter>
       </div>
@@ -148,14 +168,22 @@ languages: list = [
   "Assembly",
   "Rust",
   "Zig",
+  "Golang"
 ]
 
-favorite_libs: list = [
-  "Tensorflow",
-  "Pytorch",
-  "Cirq"
-]
-            `
+# experience
+def Google(start_year: int, role: str, end_year: int) -> str:
+    return (
+        f"start from {start_year} as {role} on google Brain, specially magenta, Tensorflow. "
+        + f" in {end_year}, i made the difficult decision to leave Google and take a break "
+        + "from the tech industry altogether. while I valued my time at Google and the "
+        + "opportunities it provided, I recognized the importance of maintaining a healthy "
+        + "work-life balance and taking time to recharge"
+    )
+
+print(Google(2021, "software engineer", 2023))
+
+`
             
           }
     </SyntaxHighlighter>

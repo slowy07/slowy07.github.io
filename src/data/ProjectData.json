@@ -3,25 +3,25 @@
     "title": "Seraphine",
     "description": "List of all reinforcement learning agents",
     "technology": "Python",
-    "visibleProject": "Public",
+    "visibleProject": "Private",
     "image": "../projects/seraphine.webp",
-    "link": "https://github.com/slowy07/seraphine"
+    "link": "#wip"
   },
   {
     "title": "Mary",
-    "description": "environment decision making in autonomous driving",
+    "description": "environment decision making in autonomous cars",
     "technology": "Python",
-    "visibleProject": "Public",
+    "visibleProject": "Private",
     "image": "../projects/mary.webp",
-    "link": "https://github.com/slowy07/mary"
+    "link": "#wip"
   },
   {
     "title": "Aiden",
-    "description": "Simple Operating System creating with assembly",
-    "technology": "Assembly",
-    "visibleProject": "Public",
+    "description": "Make Simple x86_64 emulator",
+    "technology": "C",
+    "visibleProject": "Private",
     "image": "../projects/aiden.webp",
-    "link": "https://github.com/slowy07/aiden"
+    "link": "#wip"
   },
   {
     "title": "Clara",
@@ -30,21 +30,5 @@
     "visibleProject": "public",
     "image": "../projects/clara.png",
     "link": "https://github.com/slowy07/clara"
-  },
-  {
-    "title": "Geemap",
-    "description": "A Python package for interactive mapping with Google Earth Engine, ipyleaflet, and ipywidgets. contributor on project",
-    "technology": "OpenSource",
-    "visibleProject": "public",
-    "image": "../projects/geemap.webp",
-    "link": "https://github.com/gee-community/geemap"
-  },
-  {
-    "title": "Maro",
-    "description": "Multi-Agent Resource Optimization (MARO) platform is an instance of Reinforcement Learning as a Service (RaaS) for real-world resource optimization problems. just contrib on design and prototyping",
-    "technology": "OpenSource",
-    "visibleProject": "public",
-    "image": "../projects/maro.webp",
-    "link": "https://github.com/microsoft/maro"
   }
 ]
