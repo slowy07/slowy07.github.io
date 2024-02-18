@@ -222,11 +222,11 @@ function Contacts() {
               <span>Arfy Slowy</span>
             </a>
             <a
-              href="mailto:slowy.arfy@gmail.com"
+              href="mailto:slowy.arfy@proton.me"
               className="text-[#607B96] hover:text-white inline-flex items-center gap-2.5 transition-colors"
             >
               <MdEmail />
-              <span>slowy07.arfy@gmail.com</span>
+              <span>slowy.arfy@proton.me</span>
             </a>
           </Popover.Panel>
         </Transition>

@@ -7,8 +7,8 @@ import { SiMarkdown } from "@react-icons/all-files/si/SiMarkdown";
 import { VscCollapseAll } from "@react-icons/all-files/vsc/VscCollapseAll";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { atomOneDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import gearData from "../data/GearData.json";
 import { IoLogoPython } from "@react-icons/all-files/io5/IoLogoPython";
 
@@ -83,9 +83,12 @@ function MyBio({ closeBio }) {
         </div>
       </div>
       <div className="overflow-y-auto scrollbar-thin h-full">
-        <SyntaxHighlighter language="python" style={atomOneDark} showLineNumbers>
-      {
-`name: str = "arfy slowy"
+        <SyntaxHighlighter
+          language="python"
+          style={atomOneDark}
+          showLineNumbers
+        >
+          {`name: str = "arfy slowy"
 hobbies: list = [
   "Coding",
   "Dota",
@@ -118,16 +121,16 @@ def bellshade(start_year: int, role: str) -> str:
      + "expert programming course and make some open source library"
   )
 
-print(f"hello my name {name}")
-print(intel(2021, "software engineer")) # not volunteer anymore
-print(google_earth_community(2021, "software engineer")) # still maintain
-print(microsoft(2023, "software engineer")) # not volunteer anymore
-print(bellshade(2021, "owner")) # still maintain
-print(f"My Hobby: {', '.join(hobbies)}")
+if __name__ == "__main__":
+  print(f"hello my name {name.capitalize()}")
+  print(intel(2021, "software engineer")) # not volunteer anymore
+  print(google_earth_community(2021, "software engineer")) # still maintain
+  print(microsoft(2023, "software engineer")) # not volunteer anymore
+  print(bellshade(2021, "owner")) # still maintain
+  print(f"My Hobby: {', '.join(hobbies)}")
 
-            `
-          }
-    </SyntaxHighlighter>
+            `}
+        </SyntaxHighlighter>
       </div>
     </motion.div>
   );
@@ -157,9 +160,12 @@ function Work({ closeWork }) {
         </div>
       </div>
       <div className="overflow-y-auto scrollbar-thin h-full">
-        <SyntaxHighlighter language="python" style={atomOneDark} showLineNumbers>
-      {
-`# work information
+        <SyntaxHighlighter
+          language="python"
+          style={atomOneDark}
+          showLineNumbers
+        >
+          {`# work information
 profession: str = "Software Engineer"
 languages: list = [
   "Python",
@@ -171,7 +177,7 @@ languages: list = [
   "Golang"
 ]
 
-# experience
+# work experience
 def Google(start_year: int, role: str, end_year: int) -> str:
     return (
         f"start from {start_year} as {role} on google Brain, specially magenta, Tensorflow. "
@@ -183,10 +189,8 @@ def Google(start_year: int, role: str, end_year: int) -> str:
 
 print(Google(2021, "software engineer", 2023))
 
-`
-            
-          }
-    </SyntaxHighlighter>
+`}
+        </SyntaxHighlighter>
       </div>
     </motion.div>
   );
@@ -316,14 +320,12 @@ function PersonalInfo({ setRender, render }) {
                     onClick={openPopoverBio}
                   >
                     <HiChevronRight
-                      className={`${
-                        isOpenBio ? "rotate-90" : ""
-                      } transition-all`}
+                      className={`${isOpenBio ? "rotate-90" : ""
+                        } transition-all`}
                     />
                     <RiFolder3Fill
-                      className={`${
-                        isOpenBio ? "text-[#E99287]" : "text-[#b36d64]"
-                      } transition-colors`}
+                      className={`${isOpenBio ? "text-[#E99287]" : "text-[#b36d64]"
+                        } transition-colors`}
                     />
                     <span className="pr-5 truncate">bio</span>
                   </Popover.Button>
@@ -339,9 +341,8 @@ function PersonalInfo({ setRender, render }) {
                     className="flex flex-col"
                   >
                     <Popover.Panel
-                      className={`px-4 my-1 ml-2.5 inline-flex items-center gap-2.5 transition-colors ${
-                        render === "my-bio" ? "text-white" : "text-[#607B96]"
-                      }`}
+                      className={`px-4 my-1 ml-2.5 inline-flex items-center gap-2.5 transition-colors ${render === "my-bio" ? "text-white" : "text-[#607B96]"
+                        }`}
                       as="button"
                       onClick={() => setRender("my-bio")}
                     >
@@ -349,9 +350,8 @@ function PersonalInfo({ setRender, render }) {
                       <span className="truncate">personal.py</span>
                     </Popover.Panel>
                     <Popover.Panel
-                      className={`px-4 my-1 ml-2.5 inline-flex items-center gap-2.5 transition-colors ${
-                        render === "work" ? "text-white" : "text-[#607B96]"
-                      }`}
+                      className={`px-4 my-1 ml-2.5 inline-flex items-center gap-2.5 transition-colors ${render === "work" ? "text-white" : "text-[#607B96]"
+                        }`}
                       as="button"
                       onClick={() => setRender("work")}
                     >
@@ -359,9 +359,8 @@ function PersonalInfo({ setRender, render }) {
                       <span className="truncate">work.py</span>
                     </Popover.Panel>
                     <Popover.Panel
-                      className={`px-4 my-1 ml-2.5 inline-flex items-center gap-2.5 transition-colors ${
-                        render === "gear" ? "text-white" : "text-[#607B96]"
-                      }`}
+                      className={`px-4 my-1 ml-2.5 inline-flex items-center gap-2.5 transition-colors ${render === "gear" ? "text-white" : "text-[#607B96]"
+                        }`}
                       as="button"
                       onClick={() => setRender("gear")}
                     >
