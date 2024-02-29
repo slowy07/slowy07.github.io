@@ -95,6 +95,21 @@ hobbies: list = [
   "Film",
 ]
 
+languages: list = [
+  "Python",
+  "C++",
+  "C",
+  "Assembly",
+  "Rust",
+  "Zig",
+  "Golang"
+]
+
+currently_learning: dict = {
+  "programming language": "nim",
+  "other": "quantum computing",
+}
+
 # voluenteering
 
 def intel(start_year: int, role: str) -> str:
@@ -123,10 +138,18 @@ def bellshade(start_year: int, role: str) -> str:
 
 if __name__ == "__main__":
   print(f"hello my name {name.capitalize()}")
+  
+  # voluenteering
+
+  # not voluenteering anymore
   print(intel(2021, "software engineer")) # not volunteer anymore
-  print(google_earth_community(2021, "software engineer")) # still maintain
   print(microsoft(2023, "software engineer")) # not volunteer anymore
+  
+  # still maintain
+  print(google_earth_community(2021, "software engineer")) # still maintain
   print(bellshade(2021, "owner")) # still maintain
+
+  # hobby
   print(f"My Hobby: {', '.join(hobbies)}")
 
             `}
@@ -165,19 +188,7 @@ function Work({ closeWork }) {
           style={atomOneDark}
           showLineNumbers
         >
-          {`# work information
-profession: str = "Software Engineer"
-languages: list = [
-  "Python",
-  "C++",
-  "C",
-  "Assembly",
-  "Rust",
-  "Zig",
-  "Golang"
-]
-
-# work experience
+          {`# work experience
 def Google(start_year: int, role: str, end_year: int) -> str:
     return (
         f"start from {start_year} as {role} on google Brain, specially magenta, Tensorflow. "
