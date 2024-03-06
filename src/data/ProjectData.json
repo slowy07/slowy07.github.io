@@ -30,5 +30,13 @@
     "visibleProject": "public",
     "image": "../projects/clara.png",
     "link": "https://github.com/slowy07/clara"
+  },
+  {
+    "title": "Jane (Joy Along New Experience)",
+    "description": "Develop new programming language focused for system programming",
+    "technology": "go",
+    "visibleProject": "Public",
+    "image": "../projects/jane.png",
+    "link": "https://github.com/De-Rune/jane"
   }
 ]

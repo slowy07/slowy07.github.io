@@ -9,8 +9,8 @@
           "type": ["computer"]
         },
         {
-          "item": "Lenovo Thinkpad p15 Gen 2 workstation",
-          "desc": "Love thinkpad laptops !",
+          "item": "Lenovo Thinkpad p15 Gen 2 workstation with Xeon W-11955M, 64GB of ECC RAM, RTX A5000, 2TB SSD",
+          "desc": "Mostly used for artificial intelligence research",
           "type": ["computer", "thinkpad"]
         },
         {
