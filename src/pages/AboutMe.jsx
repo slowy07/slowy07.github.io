@@ -89,6 +89,7 @@ function MyBio({ closeBio }) {
           showLineNumbers
         >
           {`name: str = "arfy slowy"
+youtube: str = "youtube.com/@arfyslowy"
 hobbies: list = [
   "Coding",
   "Dota",

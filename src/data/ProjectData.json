@@ -38,5 +38,13 @@
     "visibleProject": "Public",
     "image": "../projects/jane.png",
     "link": "https://github.com/De-Rune/jane"
+  },
+  {
+    "title": "Molly",
+    "description": "Develop program that focused transpile CPP code to ZIG code including bindings",
+    "technology": "zig",
+    "visibleProject": "Public",
+    "image": "../projects/molly.png",
+    "link": "https://github.com/De-Rune/molly"
   }
 ]
