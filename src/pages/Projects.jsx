@@ -3,7 +3,8 @@ import { BsFiles } from "@react-icons/all-files/bs/BsFiles";
 import { GoTriangleDown } from "@react-icons/all-files/go/GoTriangleDown";
 import { SiPython } from "@react-icons/all-files/si/SiPython";
 import { SiC } from "@react-icons/all-files/si/SiC";
-import { SiGithub } from "@react-icons/all-files/si/SiGithub";
+import { SiZig } from "react-icons/si";
+import { FaCrown } from "react-icons/fa6";
 import { motion } from "framer-motion";
 import { Fragment, useState } from "react";
 import datas from "../data/ProjectData.json";
@@ -78,17 +79,29 @@ export default function Projects() {
                 <span>C</span>
               </button>
             </div>
-            <div className="flex items-center gap-6">
+             <div className="flex items-center gap-6">
               <button
                 className={`flex items-center gap-2.5 cursor-pointer transition-colors hover:text-white w-full ${
-                  filter === "OpenSource" ? "text-white" : "text-[#607B96]"
+                  filter === "Zig" ? "text-white" : "text-[#607B96]"
                 }`}
-                onClick={() => setFilter("OpenSource")}
+                onClick={() => setFilter("Zig")}
               >
-                <SiGithub />
-                <span>Open Source</span>
+                <SiZig />
+                <span>Zig</span>
               </button>
             </div>
+             <div className="flex items-center gap-6">
+              <button
+                className={`flex items-center gap-2.5 cursor-pointer transition-colors hover:text-white w-full ${
+                  filter === "Nim" ? "text-white" : "text-[#607B96]"
+                }`}
+                onClick={() => setFilter("Nim")}
+              >
+                <FaCrown />
+                <span>Nim</span>
+              </button>
+            </div>
+
           </Transition>
         </div>
 
@@ -132,8 +145,11 @@ const Card = ({ data }) => {
     if (value.includes("C")) {
       return <SiC />;
     }
-    if (value.includes("OpenSource")) {
-      return <SiGithub />;
+    if (value.includes("Zig")) {
+      return <SiZig />;
+    }
+    if (value.includes("Nim")) {
+      return <FaCrown />;
     }
   }
 
