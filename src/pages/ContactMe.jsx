@@ -5,6 +5,8 @@ import { GoTriangleDown } from "@react-icons/all-files/go/GoTriangleDown";
 import { GrLinkedinOption } from "@react-icons/all-files/gr/GrLinkedinOption";
 import { MdEmail } from "@react-icons/all-files/md/MdEmail";
 import { motion } from "framer-motion";
+import { BsYoutube } from "react-icons/bs";
+import { SiWakatime } from "react-icons/si";
 import { useRef, useState } from "react";
 import { CopyBlock, atomOneDark } from "react-code-blocks";
 
@@ -199,7 +201,7 @@ function Contacts() {
           <GoTriangleDown
             className={`${isOpen ? "" : "-rotate-90"} transition-all`}
           />
-          <span>contacts</span>
+          <span>Find me</span>
         </Popover.Button>
 
         <Transition
@@ -227,6 +229,24 @@ function Contacts() {
             >
               <MdEmail />
               <span>slowy.arfy@proton.me</span>
+            </a>
+            <a
+              href="https://youtube.com/@arfyslowy"
+              className="text-[#607B96] hover:text-white inline-flex items-center gap-2.5 transition-colors"
+              target="_blank"
+              rel="noreferrer"
+            >
+            <BsYoutube/>
+            <span>@arfyslowy</span>
+            </a>
+            <a
+              href="https://wakatime.com/@slowy07"
+              className="text-[#607B96] hover:text-white inline-flex items-center gap-2.5 transition-colors"
+              target="_blank"
+              rel="noreferrer"
+            >
+            <SiWakatime/>
+            <span>@slowy07</span>
             </a>
           </Popover.Panel>
         </Transition>

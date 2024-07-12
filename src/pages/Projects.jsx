@@ -5,6 +5,8 @@ import { SiPython } from "@react-icons/all-files/si/SiPython";
 import { SiC } from "@react-icons/all-files/si/SiC";
 import { SiZig } from "react-icons/si";
 import { FaCrown } from "react-icons/fa6";
+import { FaGolang } from "react-icons/fa6";
+import { SiAssemblyscript } from "react-icons/si";
 import { motion } from "framer-motion";
 import { Fragment, useState } from "react";
 import datas from "../data/ProjectData.json";
@@ -101,6 +103,28 @@ export default function Projects() {
                 <span>Nim</span>
               </button>
             </div>
+             <div className="flex items-center gap-6">
+              <button
+                className={`flex items-center gap-2.5 cursor-pointer transition-colors hover:text-white w-full ${
+                  filter === "Golang" ? "text-white" : "text-[#607B96]"
+                }`}
+                onClick={() => setFilter("Golang")}
+              >
+                <FaGolang />
+                <span>Golang</span>
+              </button>
+            </div>
+            <div className="flex items-center gap-6">
+              <button
+                className={`flex items-center gap-2.5 cursor-pointer transition-colors hover:text-white w-full ${
+                  filter === "Assembly" ? "text-white" : "text-[#607B96]"
+                }`}
+                onClick={() => setFilter("Assembly")}
+              >
+                <SiAssemblyscript />
+                <span>Assembly</span>
+              </button>
+            </div>
 
           </Transition>
         </div>
@@ -144,6 +168,12 @@ const Card = ({ data }) => {
     }
     if (value.includes("C")) {
       return <SiC />;
+    }
+    if (value.includes("Golang")) {
+      return <FaGolang/>;
+    }
+    if (value.includes("Assembly")) {
+      return <SiAssemblyscript />;
     }
     if (value.includes("Zig")) {
       return <SiZig />;

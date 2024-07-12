@@ -64,6 +64,11 @@
       "gear": "Software",
       "gearList": [
         {
+          "item": "BSPWM (Xorg)",
+          "desc": "im use bspwm for window manager while working",
+          "type": ["window manager"]
+        },
+        {
           "item": "Vscodium",
           "desc": "I Think more better than original vscode",
           "type": ["IDE"]

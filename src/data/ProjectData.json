@@ -34,7 +34,7 @@
   {
     "title": "Jane (Joy Along New Experience)",
     "description": "Develop new programming language focused for system programming",
-    "technology": "go",
+    "technology": "Golang",
     "visibleProject": "Public",
     "image": "../projects/jane.png",
     "link": "https://github.com/De-Rune/jane"
@@ -54,5 +54,13 @@
     "visibleProject": "Public",
     "image": "../projects/claire.png",
     "link": "https://github.com/slowy07/claire"
+  },
+  {
+    "title": "Haley",
+    "description": "Create x64 kernel written with assembly",
+    "technology": "Assembly",
+    "visibleProject": "Public",
+    "image": "../projects/haley.png",
+    "link": "https://github.com/slowy07/haley"
   }
 ]
