@@ -89,7 +89,6 @@ function MyBio({ closeBio }) {
           showLineNumbers
         >
           {`name: str = "arfy slowy"
-youtube: str = "youtube.com/@arfyslowy"
 hobbies: list = [
   "Coding",
   "Dota",
@@ -108,51 +107,51 @@ languages: list = [
 
 currently_learning: dict = {
   "programming language": "nim",
-  "other": "quantum computing",
+  "other": ["quantum computing", "geospaital information system (GIS)"],
 }
 
-# voluenteering
+other: dict {
+  "youtube": "youtube.com/@arfyslowy",
+  "github": "slowy07",
+  "wakatime": "@slowy07"
+}
 
-def intel(start_year: int, role: str) -> str:
-  return ( 
-    f"Volunteering on {start_year} and working as {role} for data flow facilicator for machine learning, "
-     + "the project focused to generate easy dataset, train and use machine learning models"
-  )
+class Volunteering:
+  def __init__(self, role: str) -> None:
+      self.role = role
+  
+  def intel(self, start_year: int) -> str:
+    return f"Volunteering on {start_year} and working as {self.role} for data flow facilicator for machine learning, "
+            + "the project focudes to generate easy dataset, train and use machine learning models"
 
-def google_earth_community(start_year: int, role: str) -> str:
-  return ( 
-    f"Volunteering on {start_year} and working as {role} for package for interactive geospaital "
-     + "analysis and visualization with Google Earth Engine"
+  def google_earth_community(self, start_year) -> str:
+    return f"Volunteering on {start_year} and working as {self.role} for packackage interactive geospaital "
+            + "analysis and visualization with Google Earth Engine"
 
-def microsoft(start_year: int, role: str) -> str:
-  return (
-    f"Volunteering on {start_year} and working as {role} for AI-oriented quantitative investment "
-      + "platform, which aims to realize the potential, empower the research, and create the value "
-      + "of AI technologies in quantitative investment."
-  )
+  def microsoft(start_year: int) -> str:
+    return f"Voluenteering on {start_year} and working as {self.role} for AI-oriented quantitative investment "
+            + "of AI technologies in quantitative investment"  )
 
-def bellshade(start_year: int, role: str) -> str:
-  return (
-    f"Start from {start_year} and working as {role} for organization about basic,advance and " +
-     + "expert programming course and make some open source library"
-  )
+  def opengeos(start_year: int) -> str:
+    return f"Volunteering on {start_year} and working as {self.role} for open-source geospatial software projects, "
+            + "The projects are developed by a community of geospatial software developers and researchers"
 
 if __name__ == "__main__":
   print(f"hello my name {name.capitalize()}")
   
-  # voluenteering
-
-  # not voluenteering anymore
-  print(intel(2021, "software engineer")) # not volunteer anymore
-  print(microsoft(2023, "software engineer")) # not volunteer anymore
+  # still volunteers
+  intel_volunteers = Volunteering("Software Engineer").intel(2021)
+  microsoft_volunteers = Volunteering("Software Engineer").intel(2023)
   
-  # still maintain
-  print(google_earth_community(2021, "software engineer")) # still maintain
-  print(bellshade(2021, "owner")) # still maintain
-
-  # hobby
-  print(f"My Hobby: {', '.join(hobbies)}")
-
+  # still volunteers
+  google_earth_community_volunteers = Volunteering("Software engineer").google_earth_community(2021)
+  opengeos_volunteers = Volunteering("Software engineer").opengeos(2024)
+  
+  # display it
+  print(intel_volunteers)
+  print(microsoft_volunteers)
+  print(google_earth_community_volunteers)
+  print(opengeos_volunteers)
             `}
         </SyntaxHighlighter>
       </div>
