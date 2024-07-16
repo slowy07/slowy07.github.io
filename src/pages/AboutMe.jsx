@@ -139,7 +139,7 @@ class Volunteering:
 if __name__ == "__main__":
   print(f"hello my name {name.capitalize()}")
   
-  # still volunteers
+  # not volunteer anymore
   intel_volunteers = Volunteering("Software Engineer").intel(2021)
   microsoft_volunteers = Volunteering("Software Engineer").intel(2023)
   
