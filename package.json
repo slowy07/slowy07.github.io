@@ -22,7 +22,7 @@
     "react-code-blocks": "^0.1.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.9.0",
-    "react-router-dom": "6",
+    "react-router-dom": "7",
     "react-scripts": "5.0.1",
     "react-syntax-highlighter": "^15.5.0",
     "typewriter-effect": "^2.19.0",
