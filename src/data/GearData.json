@@ -1,20 +1,15 @@
 {
   "gearType": [
     {
-      "gear": "Hardware / Computers",
+      "gear": "Hardware / Computers & Peripherals",
       "gearList": [
-        {
-          "item": "AMD Ryzen 9 5900x (16 Core), 64GB of RAM, RTX 3090, 3TB SSD, 1TB HDD",
-          "desc": "Mostly use for my work and game, hehehe",
-          "type": ["computer"]
-        },
         {
           "item": "Lenovo Thinkpad p15 Gen 2 workstation with Xeon W-11955M, 64GB of ECC RAM, RTX A5000, 2TB SSD",
           "desc": "Mostly used for artificial intelligence research",
           "type": ["computer", "thinkpad"]
         },
         {
-          "item": "Steelseries Apex 7",
+          "item": "Ajazz AK820 V2 Pro",
           "desc": "Actually i don't know about mechanical keyboard",
           "type": ["keyboard"]
         },
@@ -29,19 +24,9 @@
       "gear": "Hardware / Monitors",
       "gearList": [
         {
-          "item": "Lenovo G34w-30 34'' VA",
-          "desc": "Hehehe, im still use Lenovo product",
+          "item": "Xiaomi G34WQI'' VA",
+          "desc": "Hehehe, Now Using Xiaomi Products",
           "type": ["monitor", "external display"]
-        }
-      ]
-    },
-    {
-      "gear": "Hardware / Audio",
-      "gearList": [
-        {
-          "item": "KZ ZAR",
-          "desc": "Actually i don't use Headset, not like to much",
-          "type": ["headset"]
         }
       ]
     },
@@ -49,9 +34,9 @@
       "gear": "Operating System",
       "gearList": [
         {
-         "item": "Linux from scratch",
-         "desc": "No use debian or arch, just LFS, yes, LFS",
-         "type": ["OS"]
+          "item": "Endeavour OS (Linux)",
+          "desc": "Based On Arch Linux With Cachyos Kernel For Better Performance",
+          "type": ["OS"]
         },
         {
           "item": "Windows 11",
@@ -79,7 +64,7 @@
           "type": ["editor"]
         },
         {
-          "item": "Alacritty, Kitty with Starship",
+          "item": "Ghostty, Kitty with Starship",
           "desc": "Blazing fast fast fast",
           "type": ["terminal"]
         }

@@ -1,66 +1,122 @@
-@import url("https://fonts.googleapis.com/css2?family=Bitter:wght@100;200;300;400;500;600;700;800;900&family=Martian+Mono:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 * {
-  font-family: "Martian Mono", monospace;
-  -webkit-user-select: none; /* Safari */
-  -ms-user-select: none; /* IE 10 and IE 11 */
-  user-select: none; /* Standard syntax */
+  font-family: "IBM Plex Mono", monospace;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-.loader div:first-child {
-  animation-delay: 0.1s;
-}
+@layer components {
+  /* monitor bezel */
+  .bezel {
+    @apply bg-[#050505] border border-net-line;
+  }
 
-.loader div:first-child(2) {
-  animation-delay: 0.2s;
-}
+  /* the screen: scanlines + film grain + vignette. pure CSS, no JS */
+  .crt {
+    position: relative;
+    background-color: #080808;
+    overflow: hidden;
+  }
+  .crt::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 50;
+    pointer-events: none;
+    background:
+      repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.22) 0 1px,
+        transparent 1px 3px
+      ),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
+    background-size: auto, 100px 100px;
+    box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.5);
+  }
 
-.loader div:first-child(3) {
-  animation-delay: 0.3s;
+  /* 1px bordered box */
+  .sys-panel {
+    @apply bg-net-bg border border-net-line;
+  }
+  /* panel header strip */
+  .sys-head {
+    @apply bg-net-panel border-b border-net-line text-net-gray uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.7rem;
+  }
+
+  /* monochrome button; hover inverts black<->white */
+  .btn-retro {
+    @apply border border-net-line text-net-ink uppercase bg-transparent;
+    letter-spacing: 0.08em;
+    transition: background-color 90ms, color 90ms, border-color 90ms;
+  }
+  .btn-retro:hover {
+    @apply bg-net-ink text-net-bg border-net-ink;
+  }
+  .btn-retro-on {
+    @apply bg-net-ink text-net-bg border-net-ink;
+  }
+
+  /* form fields */
+  .field {
+    @apply w-full bg-net-bg text-net-ink border border-net-line px-3 py-2 outline-none placeholder:text-net-gray;
+  }
+  .field:focus {
+    @apply border-net-ink bg-net-panel;
+    --tw-ring-shadow: 0 0 #0000;
+    box-shadow: none;
+  }
+
+  /* sunken content area */
+  .well {
+    @apply bg-[#0c0c0c] border border-net-line;
+  }
+
+  .title-bar {
+    @apply bg-net-panel border-b border-net-line;
+  }
+
+  .cursor-blink {
+    animation: blink 1.1s steps(1) infinite;
+  }
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .flicker {
+    animation: flicker 6s infinite;
+  }
+  @keyframes flicker {
+    0%, 100% { opacity: 1; }
+    97% { opacity: 1; }
+    97.5% { opacity: 0.85; }
+    98% { opacity: 1; }
+    99.5% { opacity: 0.92; }
+  }
+
+  /* faint phosphor glow */
+  .glow {
+    text-shadow: 0 0 8px rgba(232, 232, 224, 0.22);
+  }
+
+  /* monochrome code blocks */
+  .mono-code .token {
+    color: #e8e8e0 !important;
+  }
+  .mono-code .token.comment,
+  .mono-code .token.punctuation {
+    color: #8a8a84 !important;
+  }
 }
 
 .custom-size {
-  @apply md:w-[calc(100vw-2.5rem)] md:h-[calc(100vh-2.5rem)] w-[calc(100vw-2rem)] h-[calc(100vh-2rem)];
-}
-
-input[type="checkbox"]:checked + label {
-  color: white;
-}
-
-input[type="checkbox"]:hover {
-  outline: 1px solid #1e3448;
-}
-
-.react-syntax-highlighter-line-number {
-  @apply text-[#607B96];
-}
-
-code .token {
-  @apply text-[#607B96] !important;
-}
-
-.efofCE {
-  @apply bg-transparent p-0 !important;
-}
-
-.efofCE span {
-  @apply bg-transparent !important;
-}
-
-.sc-bcXHqe.kBPKLM {
-  @apply hidden !important;
-}
-
-.loHkWQ {
-  @apply bg-transparent p-0 !important;
-}
-
-.loHkWQ span {
-  @apply bg-transparent !important;
-}
-.sc-bcXHqe.iCXprV {
-  @apply hidden !important;
+  @apply md:w-[calc(100vw-4rem)] md:h-[calc(100vh-4rem)] w-[calc(100vw-3rem)] h-[calc(100vh-3rem)];
 }

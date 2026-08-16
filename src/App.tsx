@@ -9,20 +9,16 @@ import Projects from "./pages/Projects";
 export default function App() {
   const [isNavbar, setIsNavbar] = useState("/");
 
-  function render(value) {
-    if (value === "/") {
-      return <Home />;
-    } else if (value === "about-me") {
-      return <AboutMe />;
-    } else if (value === "projects") {
-      return <Projects />;
-    } else if (value === "contact-me") {
-      return <ContactMe />;
-    }
+  function render(value: string) {
+    if (value === "/") return <Home />;
+    if (value === "about-me") return <AboutMe />;
+    if (value === "projects") return <Projects />;
+    if (value === "contact-me") return <ContactMe />;
+    return null;
   }
 
   return (
-    <Layout setIsNavbar={setIsNavbar} isNavbar={isNavbar}>
+    <Layout isNavbar={isNavbar} setIsNavbar={setIsNavbar}>
       <AnimatePresence>{render(isNavbar)}</AnimatePresence>
     </Layout>
   );

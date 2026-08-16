@@ -10,23 +10,15 @@
     "@tailwindcss/line-clamp": "^0.4.2",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "axios": "^1.16.0",
-    "dotenv": "^16.0.3",
     "framer-motion": "^7.5.2",
     "gh-pages": "^5.0.0",
-    "i": "^0.3.7",
-    "moment": "^2.29.4",
-    "npm": "^11.17.0",
     "react": "^18.2.0",
     "react-code-blocks": "^0.1.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^4.9.0",
-    "react-router-dom": "6",
+    "react-icons": "^5.2.1",
     "react-scripts": "5.0.1",
     "react-syntax-highlighter": "^15.5.0",
-    "typewriter-effect": "^2.19.0",
-    "web-vitals": "^2.1.4"
+    "typewriter-effect": "^2.19.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -40,6 +32,11 @@
     "extends": [
       "react-app",
       "react-app/jest"
+    ]
+  },
+  "jest": {
+    "transformIgnorePatterns": [
+      "node_modules/(?!react-syntax-highlighter|react-code-blocks|framer-motion)/"
     ]
   },
   "browserslist": {
@@ -56,9 +53,14 @@
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.3",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.18.0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
     "autoprefixer": "^10.4.12",
     "postcss": "^8.5.23",
     "tailwind-scrollbar": "^2.0.1",
-    "tailwindcss": "^3.1.8"
+    "tailwindcss": "^3.1.8",
+    "typescript": "~4.9.5"
   }
 }
