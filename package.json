@@ -10,9 +10,9 @@
     "@emailjs/browser": "^3.7.0",
     "@headlessui/react": "1.7.2",
     "framer-motion": "^7.5.2",
+    "pixelarticons": "^2.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^5.7.0",
     "typewriter-effect": "^2.19.0"
   },
   "scripts": {

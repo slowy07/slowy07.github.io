@@ -1,32 +1,29 @@
 import emailjs from "@emailjs/browser";
-import { GoTriangleDown } from "react-icons/go";
-import { GrLinkedinOption } from "react-icons/gr";
-import { MdEmail } from "react-icons/md";
+import { ChevronDown, Linkedin, Mail } from "pixelarticons/react";
 import { motion } from "framer-motion";
-import { BsYoutube } from "react-icons/bs";
-import { SiWakatime } from "react-icons/si";
+import { Youtube, ChartBarBig } from "pixelarticons/react";
 import { useRef, useState } from "react";
 
 const LINKS = [
   {
     label: "Arfy Slowy",
     href: "https://www.linkedin.com/in/arfy-slowy-151776218/",
-    icon: <GrLinkedinOption />,
+    icon: <Linkedin className="w-4 h-4" />,
   },
   {
     label: "slowy.arfy@proton.me",
     href: "mailto:slowy.arfy@proton.me",
-    icon: <MdEmail />,
+    icon: <Mail className="w-4 h-4" />,
   },
   {
     label: "@arfyslowy",
     href: "https://youtube.com/@arfyslowy",
-    icon: <BsYoutube />,
+    icon: <Youtube className="w-4 h-4" />,
   },
   {
     label: "@slowy07",
     href: "https://wakatime.com/@slowy07",
-    icon: <SiWakatime />,
+    icon: <ChartBarBig className="w-4 h-4" />,
   },
 ];
 
@@ -181,8 +178,8 @@ function Directory() {
           className={`flex items-center gap-2 w-full ${isOpen ? "text-net-ink" : "text-net-gray"}`}
           onClick={() => setIsOpen(!isOpen)}
         >
-          <GoTriangleDown
-            className={`${isOpen ? "" : "-rotate-90"} transition-all`}
+          <ChevronDown
+            className={`w-4 h-4 ${isOpen ? "" : "-rotate-90"} transition-all`}
           />
           contacts
         </button>

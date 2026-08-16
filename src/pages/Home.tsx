@@ -17,13 +17,12 @@ export default function Home() {
 
         <div className="p-5 md:p-8 space-y-5 text-sm">
           <div className="flex flex-col sm:flex-row sm:items-center gap-5">
-            <div className="relative w-28 h-28 shrink-0 border border-net-line group">
+            <div className="crt relative w-28 h-28 shrink-0 border border-net-line group">
               <img
                 src="foto_profile.png"
                 alt="Portrait of Arfy Slowy"
                 className="w-full h-full object-cover grayscale contrast-125 group-hover:invert transition-[filter] duration-200"
               />
-              <div className="absolute inset-0 bg-[repeating-linear-gradient(0deg,rgba(0,0,0,0.25)_0_1px,transparent_1px_3px)] pointer-events-none" />
             </div>
             <div>
               <h1 className="text-3xl md:text-5xl text-net-ink glow font-bold">

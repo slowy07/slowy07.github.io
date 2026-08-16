@@ -1,11 +1,5 @@
 import { Dialog, Transition } from "@headlessui/react";
-import { BsFiles } from "react-icons/bs";
-import { SiPython } from "react-icons/si";
-import { SiC } from "react-icons/si";
-import { SiZig } from "react-icons/si";
-import { FaCrown } from "react-icons/fa6";
-import { FaGolang } from "react-icons/fa6";
-import { SiAssemblyscript } from "react-icons/si";
+import { Files, Code, Crown, Terminal, Cpu } from "pixelarticons/react";
 import { motion } from "framer-motion";
 import { Fragment, useState } from "react";
 import datas from "../data/ProjectData.json";
@@ -20,13 +14,13 @@ type Project = {
 };
 
 const FILTERS = [
-  { id: "all", label: "ALL", icon: <BsFiles /> },
-  { id: "Python", label: "PYTHON", icon: <SiPython /> },
-  { id: "C", label: "C", icon: <SiC /> },
-  { id: "Zig", label: "ZIG", icon: <SiZig /> },
-  { id: "Nim", label: "NIM", icon: <FaCrown /> },
-  { id: "Golang", label: "GOLANG", icon: <FaGolang /> },
-  { id: "Assembly", label: "ASSEMBLY", icon: <SiAssemblyscript /> },
+  { id: "all", label: "ALL", icon: <Files className="w-4 h-4" /> },
+  { id: "Python", label: "PYTHON", icon: <Code className="w-4 h-4" /> },
+  { id: "C", label: "C", icon: <Code className="w-4 h-4" /> },
+  { id: "Zig", label: "ZIG", icon: <Code className="w-4 h-4" /> },
+  { id: "Nim", label: "NIM", icon: <Crown className="w-4 h-4" /> },
+  { id: "Golang", label: "GOLANG", icon: <Terminal className="w-4 h-4" /> },
+  { id: "Assembly", label: "ASSEMBLY", icon: <Cpu className="w-4 h-4" /> },
 ];
 
 export default function Projects() {

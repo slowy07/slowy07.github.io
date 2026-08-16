@@ -1,12 +1,7 @@
-import { AiOutlineClose } from "react-icons/ai";
-import { GoTriangleDown } from "react-icons/go";
-import { HiChevronRight } from "react-icons/hi";
-import { VscCollapseAll } from "react-icons/vsc";
+import { Close, ChevronDown, ChevronRight, Collapse, Code, FileText } from "pixelarticons/react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import gearData from "../data/GearData.json";
-import { IoLogoPython } from "react-icons/io5";
-import { SiMarkdown } from "react-icons/si";
 
 type CloseFn = (v: string) => void;
 
@@ -17,9 +12,9 @@ const pageMotion = {
 };
 
 const FILES = [
-  { id: "my-bio", file: "personal.py", icon: <IoLogoPython /> },
-  { id: "work", file: "work.py", icon: <IoLogoPython /> },
-  { id: "gear", file: "gear.md", icon: <SiMarkdown /> },
+  { id: "my-bio", file: "personal.py", icon: <Code className="w-4 h-4" /> },
+  { id: "work", file: "work.py", icon: <Code className="w-4 h-4" /> },
+  { id: "gear", file: "gear.md", icon: <FileText className="w-4 h-4" /> },
 ];
 
 export default function AboutMe() {
@@ -68,7 +63,7 @@ function FileWindow({
           onClick={() => close("/")}
           aria-label={`Close ${title}`}
         >
-          <AiOutlineClose />
+          <Close className="w-4 h-4" />
         </button>
       </div>
       <div className="well flex-1 overflow-y-auto scrollbar-thin min-h-0">
@@ -78,7 +73,7 @@ function FileWindow({
   );
 }
 
-function Code({ code }: { code: string }) {
+function CodeBlock({ code }: { code: string }) {
   return (
     <pre className="whitespace-pre text-[0.8rem] leading-5 p-4 text-net-ink">
       {code}
@@ -154,7 +149,7 @@ if __name__ == "__main__":
 function MyBio({ close }: { close: CloseFn }) {
   return (
     <FileWindow title="personal.py" close={close}>
-      <Code code={BIO} />
+      <CodeBlock code={BIO} />
     </FileWindow>
   );
 }
@@ -174,7 +169,7 @@ print(Google(2021, "software engineer", 2023))`;
 function Work({ close }: { close: CloseFn }) {
   return (
     <FileWindow title="work.py" close={close}>
-      <Code code={WORK} />
+      <CodeBlock code={WORK} />
     </FileWindow>
   );
 }
@@ -230,7 +225,7 @@ function PersonalInfo({
           className="text-net-gray hover:text-net-ink"
           aria-label="Collapse all"
         >
-          <VscCollapseAll />
+          <Collapse className="w-4 h-4" />
         </button>
       </div>
 
@@ -239,8 +234,8 @@ function PersonalInfo({
           className={`flex items-center gap-2 w-full ${isOpen ? "text-net-ink" : "text-net-gray"}`}
           onClick={() => setIsOpen(!isOpen)}
         >
-          <GoTriangleDown
-            className={`${isOpen ? "" : "-rotate-90"} transition-all`}
+          <ChevronDown
+            className={`w-4 h-4 ${isOpen ? "" : "-rotate-90"} transition-all`}
           />
           personal info
         </button>
@@ -251,8 +246,8 @@ function PersonalInfo({
               className={`flex items-center gap-2 w-full ${isOpenBio ? "text-net-ink" : "text-net-gray"}`}
               onClick={() => setIsOpenBio(!isOpenBio)}
             >
-              <HiChevronRight
-                className={`${isOpenBio ? "rotate-90" : ""} transition-all`}
+              <ChevronRight
+                className={`w-4 h-4 ${isOpenBio ? "rotate-90" : ""} transition-all`}
               />
               bio/
             </button>

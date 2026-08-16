@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { AiOutlineGithub } from "react-icons/ai";
+import { Github } from "pixelarticons/react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
@@ -84,7 +84,7 @@ export default function Layout({ children, setIsNavbar, isNavbar }: LayoutProps)
                   aria-label="Follow me on github"
                   className="btn-retro px-2 py-0.5 flex items-center gap-1"
                 >
-                  <AiOutlineGithub /> GH
+                  <Github className="w-4 h-4" /> GH
                 </a>
                 <button
                   className="btn-retro px-2 py-0.5 lg:hidden"
