@@ -1,7 +1,7 @@
 import { Dialog, Transition } from "@headlessui/react";
-import { BsFiles } from "@react-icons/all-files/bs/BsFiles";
-import { SiPython } from "@react-icons/all-files/si/SiPython";
-import { SiC } from "@react-icons/all-files/si/SiC";
+import { BsFiles } from "react-icons/bs";
+import { SiPython } from "react-icons/si";
+import { SiC } from "react-icons/si";
 import { SiZig } from "react-icons/si";
 import { FaCrown } from "react-icons/fa6";
 import { FaGolang } from "react-icons/fa6";

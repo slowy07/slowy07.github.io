@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { AiOutlineGithub } from "@react-icons/all-files/ai/AiOutlineGithub";
+import { AiOutlineGithub } from "react-icons/ai";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 

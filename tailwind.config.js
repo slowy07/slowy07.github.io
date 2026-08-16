@@ -1,5 +1,7 @@
+import tailwindScrollbar from "tailwind-scrollbar";
+
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
@@ -15,9 +17,5 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    require("@tailwindcss/forms"),
-    require("tailwind-scrollbar"),
-    require("@tailwindcss/line-clamp"),
-  ],
+  plugins: [tailwindScrollbar],
 };

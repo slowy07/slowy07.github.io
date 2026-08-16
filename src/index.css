@@ -106,15 +106,6 @@
   .glow {
     text-shadow: 0 0 8px rgba(232, 232, 224, 0.22);
   }
-
-  /* monochrome code blocks */
-  .mono-code .token {
-    color: #e8e8e0 !important;
-  }
-  .mono-code .token.comment,
-  .mono-code .token.punctuation {
-    color: #8a8a84 !important;
-  }
 }
 
 .custom-size {

@@ -2,69 +2,41 @@
   "name": "learn-react",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "engines": {
-    "node": "24.x"
+    "bun": ">=1.0"
   },
-  "homepage": "https://slowy07.github.io",
   "dependencies": {
     "@emailjs/browser": "^3.7.0",
     "@headlessui/react": "1.7.2",
-    "@react-icons/all-files": "^4.1.0",
-    "@tailwindcss/line-clamp": "^0.4.2",
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
     "framer-motion": "^7.5.2",
-    "gh-pages": "^5.0.0",
     "react": "^18.2.0",
-    "react-code-blocks": "^0.1.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^5.2.1",
-    "react-scripts": "5.0.1",
-    "react-syntax-highlighter": "^15.5.0",
+    "react-icons": "^5.7.0",
     "typewriter-effect": "^2.19.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "predeploy": "npm run build",
-    "deploy": "main -d build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "jest": {
-    "transformIgnorePatterns": [
-      "node_modules/(?!react-syntax-highlighter|react-code-blocks|framer-motion)/"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "predeploy": "bun run build",
+    "deploy": "gh-pages -d build"
   },
   "devDependencies": {
-    "@tailwindcss/forms": "^0.5.3",
-    "@types/jest": "^27.5.2",
-    "@types/node": "^16.18.0",
-    "@types/react": "^18.0.0",
-    "@types/react-dom": "^18.0.0",
-    "@types/react-syntax-highlighter": "^15.5.13",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^13.4.0",
+    "@types/react": "18.2.79",
+    "@types/react-dom": "18.2.25",
+    "@vitejs/plugin-react": "^4.3.4",
     "autoprefixer": "^10.4.12",
+    "gh-pages": "^5.0.0",
+    "jsdom": "^24.1.1",
     "postcss": "^8.5.23",
     "tailwind-scrollbar": "^2.0.1",
     "tailwindcss": "^3.1.8",
-    "typescript": "~4.9.5"
+    "typescript": "^5.6.3",
+    "vite": "^6.0.5",
+    "vitest": "^2.1.8"
   }
 }

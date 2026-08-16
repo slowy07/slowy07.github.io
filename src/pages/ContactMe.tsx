@@ -1,7 +1,7 @@
 import emailjs from "@emailjs/browser";
-import { GoTriangleDown } from "@react-icons/all-files/go/GoTriangleDown";
-import { GrLinkedinOption } from "@react-icons/all-files/gr/GrLinkedinOption";
-import { MdEmail } from "@react-icons/all-files/md/MdEmail";
+import { GoTriangleDown } from "react-icons/go";
+import { GrLinkedinOption } from "react-icons/gr";
+import { MdEmail } from "react-icons/md";
 import { motion } from "framer-motion";
 import { BsYoutube } from "react-icons/bs";
 import { SiWakatime } from "react-icons/si";
@@ -52,14 +52,14 @@ export default function ContactMe() {
 
     emailjs
       .send(
-        process.env.REACT_APP_EMAIL_SERVICE!,
-        process.env.REACT_APP_EMAIL_TEMPLATE!,
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         {
           from_name: formData.form_name,
           message: formData.message,
           email: formData.email,
         },
-        process.env.REACT_APP_EMAIL_JS_USER_ID!
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       )
       .then(() => {
         setLoader(false);

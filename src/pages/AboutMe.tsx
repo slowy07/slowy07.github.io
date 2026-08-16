@@ -1,14 +1,12 @@
-import { AiOutlineClose } from "@react-icons/all-files/ai/AiOutlineClose";
-import { GoTriangleDown } from "@react-icons/all-files/go/GoTriangleDown";
-import { HiChevronRight } from "@react-icons/all-files/hi/HiChevronRight";
-import { VscCollapseAll } from "@react-icons/all-files/vsc/VscCollapseAll";
+import { AiOutlineClose } from "react-icons/ai";
+import { GoTriangleDown } from "react-icons/go";
+import { HiChevronRight } from "react-icons/hi";
+import { VscCollapseAll } from "react-icons/vsc";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { atomOneDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import gearData from "../data/GearData.json";
-import { IoLogoPython } from "@react-icons/all-files/io5/IoLogoPython";
-import { SiMarkdown } from "@react-icons/all-files/si/SiMarkdown";
+import { IoLogoPython } from "react-icons/io5";
+import { SiMarkdown } from "react-icons/si";
 
 type CloseFn = (v: string) => void;
 
@@ -40,9 +38,9 @@ export default function AboutMe() {
         </div>
         <div className="lg:col-span-9 h-full min-h-0">
           <AnimatePresence initial={false} mode="wait">
-            {render === "my-bio" && <MyBio closeBio={setRender} />}
-            {render === "work" && <Work closeWork={setRender} />}
-            {render === "gear" && <Gear closeGear={setRender} />}
+            {render === "my-bio" && <MyBio close={setRender} />}
+            {render === "work" && <Work close={setRender} />}
+            {render === "gear" && <Gear close={setRender} />}
           </AnimatePresence>
         </div>
       </div>
@@ -73,23 +71,22 @@ function FileWindow({
           <AiOutlineClose />
         </button>
       </div>
-      <div className="well flex-1 overflow-y-auto scrollbar-thin min-h-0 mono-code">
+      <div className="well flex-1 overflow-y-auto scrollbar-thin min-h-0">
         {children}
       </div>
     </motion.div>
   );
 }
 
-function MyBio({ closeBio }: { closeBio: CloseFn }) {
+function Code({ code }: { code: string }) {
   return (
-    <FileWindow title="personal.py" close={closeBio}>
-      <SyntaxHighlighter
-        language="python"
-        style={atomOneDark}
-        showLineNumbers
-        customStyle={{ background: "transparent", margin: 0, fontSize: "0.8rem" }}
-      >
-        {`name: str = "arfy slowy"
+    <pre className="whitespace-pre text-[0.8rem] leading-5 p-4 text-net-ink">
+      {code}
+    </pre>
+  );
+}
+
+const BIO = `name: str = "arfy slowy"
 hobbies: list = [
   "Coding",
   "Dota",
@@ -152,23 +149,17 @@ if __name__ == "__main__":
   print(intel_volunteers)
   print(microsoft_volunteers)
   print(google_earth_community_volunteers)
-  print(opengeos_volunteers)
-            `}
-      </SyntaxHighlighter>
+  print(opengeos_volunteers)`;
+
+function MyBio({ close }: { close: CloseFn }) {
+  return (
+    <FileWindow title="personal.py" close={close}>
+      <Code code={BIO} />
     </FileWindow>
   );
 }
 
-function Work({ closeWork }: { closeWork: CloseFn }) {
-  return (
-    <FileWindow title="work.py" close={closeWork}>
-      <SyntaxHighlighter
-        language="python"
-        style={atomOneDark}
-        showLineNumbers
-        customStyle={{ background: "transparent", margin: 0, fontSize: "0.8rem" }}
-      >
-        {`# work experience
+const WORK = `# work experience
 def Google(start_year: int, role: str, end_year: int) -> str:
     return (
         f"start from {start_year} as {role} on google Brain, specially magenta, Tensorflow. "
@@ -178,10 +169,12 @@ def Google(start_year: int, role: str, end_year: int) -> str:
         + "work-life balance and taking time to recharge"
     )
 
-print(Google(2021, "software engineer", 2023))
+print(Google(2021, "software engineer", 2023))`;
 
-`}
-      </SyntaxHighlighter>
+function Work({ close }: { close: CloseFn }) {
+  return (
+    <FileWindow title="work.py" close={close}>
+      <Code code={WORK} />
     </FileWindow>
   );
 }
@@ -189,9 +182,9 @@ print(Google(2021, "software engineer", 2023))
 type GearItem = { item: string; desc: string; type?: string[] };
 type GearType = { gear: string; gearList: GearItem[] };
 
-function Gear({ closeGear }: { closeGear: CloseFn }) {
+function Gear({ close }: { close: CloseFn }) {
   return (
-    <FileWindow title="gear.md" close={closeGear}>
+    <FileWindow title="gear.md" close={close}>
       <div className="p-4 md:p-6 space-y-8 text-sm">
         {(gearData as { gearType: GearType[] }).gearType.map((data) => (
           <section key={data.gear}>
