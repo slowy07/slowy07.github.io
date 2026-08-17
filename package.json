@@ -7,7 +7,6 @@
     "bun": ">=1.0"
   },
   "dependencies": {
-    "@emailjs/browser": "^3.7.0",
     "@headlessui/react": "1.7.2",
     "framer-motion": "^7.5.2",
     "pixelarticons": "^2.4.1",

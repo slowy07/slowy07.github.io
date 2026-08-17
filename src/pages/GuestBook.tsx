@@ -1,29 +1,32 @@
 import { motion } from "framer-motion";
 import { useEffect, useState, useRef } from "react";
 import {
-  User,
   GuestbookEntry,
-  fetchMe,
   fetchGuestbook,
-  postGuestbook,
-  loginGitHub,
-  loginGoogle,
-  logout,
-  getProfilePicUrl,
+  submitEntry,
+  verifyEntry,
 } from "../lib/guestbook";
 
+type Step = "form" | "verify" | "done";
+
 export default function GuestBook() {
-  const [user, setUser] = useState<User | null>(null);
   const [entries, setEntries] = useState<GuestbookEntry[]>([]);
-  const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(true);
-  const [sending, setSending] = useState(false);
+  const [step, setStep] = useState<Step>("form");
   const [error, setError] = useState("");
+
+  // form fields
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [code, setCode] = useState("");
+  const [sending, setSending] = useState(false);
+
   const formRef = useRef<HTMLFormElement>(null);
+  const verifyRef = useRef<HTMLFormElement>(null);
 
   useEffect(() => {
-    Promise.all([fetchMe(), fetchGuestbook()]).then(([u, e]) => {
-      setUser(u);
+    fetchGuestbook().then((e) => {
       setEntries(e);
       setLoading(false);
     });
@@ -31,24 +34,41 @@ export default function GuestBook() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!message.trim()) return;
     setSending(true);
     setError("");
-    try {
-      const entry = await postGuestbook(message);
-      setEntries((prev) => [entry, ...prev]);
-      setMessage("");
-      formRef.current?.reset();
-    } catch {
-      setError("FAILED TO SEND. TRY AGAIN.");
-    } finally {
-      setSending(false);
+    const res = await submitEntry(username, email, message);
+    setSending(false);
+    if (res.ok) {
+      setStep("verify");
+    } else {
+      setError(res.error || "FAILED TO SUBMIT");
     }
   };
 
-  const handleLogout = async () => {
-    await logout();
-    setUser(null);
+  const handleVerify = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setSending(true);
+    setError("");
+    const res = await verifyEntry(email, code);
+    setSending(false);
+    if (res.ok) {
+      setStep("done");
+      // refresh entries
+      const updated = await fetchGuestbook();
+      setEntries(updated);
+    } else {
+      setError(res.error || "INVALID CODE");
+    }
+  };
+
+  const reset = () => {
+    setStep("form");
+    setUsername("");
+    setEmail("");
+    setMessage("");
+    setCode("");
+    setError("");
+    formRef.current?.reset();
   };
 
   return (
@@ -68,37 +88,16 @@ export default function GuestBook() {
             <div className="p-3 text-xs space-y-3">
               <div className="border-t border-net-line pt-2 text-net-gray space-y-1">
                 <p>ENTRIES: {entries.length}</p>
-                <p>STATUS: {user ? "AUTHENTICATED" : "ANONYMOUS"}</p>
-                <p>PROTOCOL: OAUTH 2.0</p>
+                <p>STATUS: ONLINE</p>
+                <p>PROTOCOL: EMAIL VERIFY</p>
               </div>
-              {user ? (
-                <div className="space-y-2">
-                  <div className="flex items-center gap-2">
-                    <img
-                      src={getProfilePicUrl(user.profilePicId)}
-                      alt="avatar"
-                      className="w-8 h-8 border border-net-line"
-                    />
-                    <div>
-                      <p className="text-net-ink">{user.displayName}</p>
-                      <p className="text-net-gray text-[10px]">@{user.username}</p>
-                    </div>
-                  </div>
-                  <button onClick={handleLogout} className="btn-retro px-3 py-1 text-[10px] w-full">
-                    [LOGOUT]
-                  </button>
-                </div>
-              ) : (
-                <div className="space-y-2">
-                  <p className="text-net-gray">SIGN IN TO POST:</p>
-                  <button onClick={loginGitHub} className="btn-retro px-3 py-1.5 text-[10px] w-full">
-                    [SIGN IN WITH GITHUB]
-                  </button>
-                  <button onClick={loginGoogle} className="btn-retro px-3 py-1.5 text-[10px] w-full">
-                    [SIGN IN WITH GOOGLE]
-                  </button>
-                </div>
-              )}
+              <div className="border-t border-net-line pt-2 text-net-gray text-[10px] space-y-1">
+                <p>HOW IT WORKS:</p>
+                <p>1. FILL THE FORM</p>
+                <p>2. CHECK YOUR EMAIL</p>
+                <p>3. ENTER THE CODE</p>
+                <p>4. MESSAGE GOES LIVE</p>
+              </div>
             </div>
           </div>
         </div>
@@ -116,31 +115,86 @@ export default function GuestBook() {
                 <p className="text-net-gray text-xs animate-pulse">LOADING ENTRIES...</p>
               ) : (
                 <div className="space-y-4">
-                  {/* Post form */}
-                  {user ? (
+                  {/* Form / Verify / Done */}
+                  {step === "form" && (
                     <form ref={formRef} onSubmit={handleSubmit} className="space-y-3 border-b border-net-line pb-4">
-                      <p className="text-net-gray text-xs">
-                        POSTING AS: <span className="text-net-ink glow">{user.displayName}</span>
-                      </p>
-                      <textarea
-                        rows={3}
-                        className="field resize-none text-xs"
-                        placeholder="LEAVE A MESSAGE..."
-                        value={message}
-                        onChange={(e) => setMessage(e.target.value)}
-                        maxLength={1000}
-                        required
-                      />
+                      <p className="text-net-gray text-xs">SUBMIT A MESSAGE:</p>
+                      <label className="flex flex-col gap-1.5 text-net-gray text-xs">
+                        _username:
+                        <input
+                          className="field"
+                          placeholder="YOUR NAME"
+                          value={username}
+                          onChange={(e) => setUsername(e.target.value)}
+                          required
+                        />
+                      </label>
+                      <label className="flex flex-col gap-1.5 text-net-gray text-xs">
+                        _email:
+                        <input
+                          className="field"
+                          type="email"
+                          placeholder="YOU@PROTON.ME"
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
+                          required
+                        />
+                      </label>
+                      <label className="flex flex-col gap-1.5 text-net-gray text-xs">
+                        _message:
+                        <textarea
+                          className="field resize-none text-xs"
+                          rows={3}
+                          placeholder="LEAVE A MESSAGE..."
+                          value={message}
+                          onChange={(e) => setMessage(e.target.value)}
+                          maxLength={1000}
+                          required
+                        />
+                      </label>
                       <div className="flex items-center gap-3">
                         <button className="btn-retro px-3 py-1.5 text-[10px]" type="submit" disabled={sending}>
-                          {sending ? "[SENDING...]" : "[POST MESSAGE] >"}
+                          {sending ? "[SENDING...]" : "[SUBMIT] >"}
                         </button>
                         {error && <span className="text-net-gray text-[10px]">{error}</span>}
                       </div>
                     </form>
-                  ) : (
-                    <div className="border-b border-net-line pb-4 text-xs text-net-gray">
-                      <p>SIGN IN TO POST A MESSAGE.</p>
+                  )}
+
+                  {step === "verify" && (
+                    <form ref={verifyRef} onSubmit={handleVerify} className="space-y-3 border-b border-net-line pb-4">
+                      <p className="text-net-gray text-xs">
+                        CODE SENT TO: <span className="text-net-ink glow">{email}</span>
+                      </p>
+                      <label className="flex flex-col gap-1.5 text-net-gray text-xs">
+                        _verification_code:
+                        <input
+                          className="field"
+                          placeholder="123456"
+                          value={code}
+                          onChange={(e) => setCode(e.target.value)}
+                          maxLength={6}
+                          required
+                        />
+                      </label>
+                      <div className="flex items-center gap-3">
+                        <button className="btn-retro px-3 py-1.5 text-[10px]" type="submit" disabled={sending}>
+                          {sending ? "[VERIFYING...]" : "[VERIFY CODE] >"}
+                        </button>
+                        <button className="btn-retro px-3 py-1.5 text-[10px]" type="button" onClick={reset}>
+                          [BACK]
+                        </button>
+                        {error && <span className="text-net-gray text-[10px]">{error}</span>}
+                      </div>
+                    </form>
+                  )}
+
+                  {step === "done" && (
+                    <div className="border-b border-net-line pb-4 space-y-2">
+                      <p className="text-net-ink glow text-xs">&gt; MESSAGE VERIFIED AND LIVE.</p>
+                      <button className="btn-retro px-3 py-1.5 text-[10px]" onClick={reset}>
+                        [POST ANOTHER]
+                      </button>
                     </div>
                   )}
 
@@ -149,22 +203,14 @@ export default function GuestBook() {
                     <p className="text-net-gray text-xs">NO ENTRIES YET. BE THE FIRST.</p>
                   ) : (
                     entries.map((entry) => (
-                      <div key={entry.id} className="flex gap-3 text-xs">
-                        <img
-                          src={getProfilePicUrl(entry.profilePicId)}
-                          alt=""
-                          className="w-10 h-10 border border-net-line flex-shrink-0"
-                        />
-                        <div className="min-w-0">
-                          <div className="flex items-baseline gap-2">
-                            <span className="text-net-ink glow">{entry.displayName}</span>
-                            <span className="text-net-gray text-[10px]">@{entry.username}</span>
-                            <span className="text-net-gray text-[10px] ml-auto">
-                              {new Date(entry.createdAt).toLocaleDateString()}
-                            </span>
-                          </div>
-                          <p className="text-net-gray mt-1 break-words">{entry.message}</p>
+                      <div key={entry.id} className="text-xs">
+                        <div className="flex items-baseline gap-2">
+                          <span className="text-net-ink glow">{entry.username}</span>
+                          <span className="text-net-gray text-[10px]">
+                            {new Date(entry.created_at).toLocaleDateString()}
+                          </span>
                         </div>
+                        <p className="text-net-gray mt-1 break-words">{entry.message}</p>
                       </div>
                     ))
                   )}
