@@ -7,7 +7,7 @@ const NAV = [
   { key: "/", label: "home", n: "01" },
   { key: "about-me", label: "profile", n: "02" },
   { key: "projects", label: "projects", n: "03" },
-  { key: "contact-me", label: "contact", n: "04" },
+  { key: "guestbook", label: "guestbook", n: "04" },
 ];
 
 const pad = (n: number) => String(n).padStart(2, "0");
