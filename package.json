@@ -3,9 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "engines": {
-    "bun": ">=1.0"
-  },
   "dependencies": {
     "@headlessui/react": "1.7.2",
     "framer-motion": "^7.5.2",
@@ -19,7 +16,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "test": "vitest run",
-    "predeploy": "bun run build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
   "devDependencies": {
