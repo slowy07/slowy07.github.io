@@ -33,7 +33,7 @@
     "tailwind-scrollbar": "^2.0.1",
     "tailwindcss": "^3.1.8",
     "typescript": "^5.6.3",
-    "vite": "^6.0.5",
-    "vitest": "^2.1.8"
+    "vite": "^8.2.1",
+    "vitest": "^4.1.10"
   }
 }
