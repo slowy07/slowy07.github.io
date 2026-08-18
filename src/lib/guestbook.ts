@@ -1,10 +1,18 @@
 import { getSupabase } from "./supabase";
 
+const TOTAL_PROFILE_PICS = 11;
+
 export interface GuestbookEntry {
   id: number;
   username: string;
   message: string;
   created_at: string;
+}
+
+// ponytail: deterministic per entry — same id always gets same pic
+export function getProfilePicUrl(id: number): string {
+  const safeId = ((id - 1) % TOTAL_PROFILE_PICS) + 1;
+  return new URL(`../assets/profile_pic/char${safeId}.svg`, import.meta.url).href;
 }
 
 // ponytail: Supabase handles auth + DB + email. No server needed.

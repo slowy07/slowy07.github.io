@@ -5,6 +5,7 @@ import {
   fetchGuestbook,
   submitEntry,
   verifyEntry,
+  getProfilePicUrl,
 } from "../lib/guestbook";
 
 type Step = "form" | "verify" | "done";
@@ -203,14 +204,21 @@ export default function GuestBook() {
                     <p className="text-net-gray text-xs">NO ENTRIES YET. BE THE FIRST.</p>
                   ) : (
                     entries.map((entry) => (
-                      <div key={entry.id} className="text-xs">
-                        <div className="flex items-baseline gap-2">
-                          <span className="text-net-ink glow">{entry.username}</span>
-                          <span className="text-net-gray text-[10px]">
-                            {new Date(entry.created_at).toLocaleDateString()}
-                          </span>
+                      <div key={entry.id} className="flex gap-3 text-xs">
+                        <img
+                          src={getProfilePicUrl(entry.id)}
+                          alt=""
+                          className="w-10 h-10 border border-net-line flex-shrink-0"
+                        />
+                        <div className="min-w-0">
+                          <div className="flex items-baseline gap-2">
+                            <span className="text-net-ink glow">{entry.username}</span>
+                            <span className="text-net-gray text-[10px]">
+                              {new Date(entry.created_at).toLocaleDateString()}
+                            </span>
+                          </div>
+                          <p className="text-net-gray mt-1 break-words">{entry.message}</p>
                         </div>
-                        <p className="text-net-gray mt-1 break-words">{entry.message}</p>
                       </div>
                     ))
                   )}
