@@ -27,7 +27,7 @@
     "@types/react-dom": "18.2.25",
     "@vitejs/plugin-react": "^4.3.4",
     "autoprefixer": "^10.4.12",
-    "gh-pages": "^5.0.0",
+    "gh-pages": "^6.3.0",
     "jsdom": "^24.1.1",
     "postcss": "^8.5.23",
     "tailwind-scrollbar": "^2.0.1",
