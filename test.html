@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bubble Sort Visualizer</title>
+<style>
+  :root{
+    --bg: #141b1e;
+    --panel: #182126;
+    --editor: #101619;
+    --green: #8ccf7e;
+    --green-dim: #5a9950;
+    --compare: #cf9a5a;
+    --text: #cfe7dc;
+    --text-dim: #5c7570;
+    --line: #223028;
+  }
+  *{box-sizing:border-box;}
+  html,body{
+    margin:0;
+    background:var(--bg);
+    font-family:'Segoe UI',ui-sans-serif,system-ui,sans-serif;
+    color:var(--text);
+    overflow-x:hidden;
+  }
+  .app{
+    width:100%;
+    max-width:960px;
+    margin:0 auto;
+    padding:max(28px, env(safe-area-inset-top)) 24px 40px;
+  }
+  .topbar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:14px;
+    margin-bottom:32px;
+    flex-wrap:wrap;
+  }
+  .title{
+    font-size:15px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--green);
+    font-weight:600;
+    white-space:nowrap;
+  }
+  .controls{
+    display:flex;
+    gap:10px;
+    align-items:center;
+    flex-wrap:wrap;
+  }
+  button{
+    background:transparent;
+    border:1px solid var(--green-dim);
+    color:var(--green);
+    padding:8px 16px;
+    font-size:12px;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    border-radius:3px;
+    cursor:pointer;
+    transition:background .15s ease, border-color .15s ease;
+    font-family:inherit;
+  }
+  button:hover{
+    background:rgba(140,207,126,0.10);
+    border-color:var(--green);
+  }
+  button:active{ transform:scale(0.97); }
+  button:disabled{ opacity:0.35; cursor:default; }
+  button#soundBtn.muted{
+    color:var(--text-dim);
+    border-color:var(--line);
+  }
+  .speed-wrap{
+    display:flex; align-items:center; gap:8px;
+    font-size:11px; color:var(--text-dim); letter-spacing:0.04em; text-transform:uppercase;
+  }
+  input[type=range]{
+    -webkit-appearance:none; width:90px; height:2px; background:var(--line); outline:none; border-radius:2px;
+  }
+  input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance:none; width:12px; height:12px; border-radius:50%;
+    background:var(--green); cursor:pointer;
+  }
+
+  .stage{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:18px 12px 12px;
+    margin-bottom:18px;
+  }
+
+  .grid{
+    margin:0;
+    padding:6px 4px;
+    font-family:'SF Mono','Fira Code',ui-monospace,Consolas,monospace;
+    font-size:13px;
+    line-height:1.15;
+    white-space:pre;
+    overflow-x:auto;
+    color:var(--text-dim);
+  }
+  .grid b{ font-weight:normal; color:var(--green-dim); }
+  .grid b.c{ color:var(--compare); }
+  .grid b.s{ color:var(--green); }
+
+  .status-row{
+    display:flex; justify-content:space-between; align-items:center;
+    margin-top:14px; padding-top:12px; border-top:1px solid var(--line);
+    font-size:12px; color:var(--text-dim);
+    flex-wrap:wrap;
+    gap:6px;
+  }
+  .status-row .metric{ color:var(--green); font-weight:600; }
+  .status-row .badge{ color:var(--text-dim); }
+
+  .editor{
+    background:var(--editor);
+    border:1px solid var(--line);
+    border-radius:6px;
+    overflow:hidden;
+  }
+  .editor-bar{
+    display:flex; align-items:center; gap:8px;
+    padding:9px 14px;
+    border-bottom:1px solid var(--line);
+    background:#12181b;
+  }
+  .dot{ width:9px; height:9px; border-radius:50%; }
+  .dot.r{ background:#4a3030; }
+  .dot.y{ background:#4a4530; }
+  .dot.g{ background:#2f4a38; }
+  .editor-bar .fname{
+    margin-left:8px; font-size:11.5px; color:var(--text-dim); letter-spacing:0.02em;
+  }
+
+  /* Code block: no outer padding — each line carries its own tight spacing */
+  pre.code{
+    margin:0;
+    padding:0;
+    font-family:'SF Mono','Fira Code',ui-monospace,Consolas,monospace;
+    font-size:12.5px;
+    line-height:1.45;
+    overflow-x:auto;
+    white-space:pre;
+  }
+  .code .line{
+    display:block;
+    padding:1px 14px;
+    white-space:pre;
+  }
+  .code .ln{
+    display:inline-block;
+    width:24px;
+    color:#3a4a45;
+    user-select:none;
+    text-align:right;
+    margin-right:12px;
+  }
+  .code .line.active{
+    background:rgba(140,207,126,0.10);
+    box-shadow:inset 3px 0 0 var(--green);
+  }
+  .code .line.active .ln{ color:var(--green); }
+  .kw{ color:#c792ea; }
+  .fn{ color:#82c0d9; }
+  .op{ color:var(--green); }
+  .ty{ color:var(--compare); }
+  .cm{ color:#4a5a55; font-style:italic; }
+
+  /* Branded title block under the snippet */
+  .editor-footer{
+    padding:20px 18px 22px;
+    border-top:1px solid var(--line);
+    text-align:center;
+  }
+  .ef-title{
+    font-size:16px;
+    font-weight:600;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--green);
+  }
+  .ef-handle{
+    margin-top:6px;
+    font-size:12.5px;
+    color:var(--text-dim);
+    letter-spacing:0.02em;
+  }
+
+  /* Responsive / portrait phone (reels, stories) */
+  @media (max-width: 480px){
+    .app{ padding-top:max(32px, env(safe-area-inset-top)); padding-left:14px; padding-right:14px; padding-bottom:28px; }
+    .topbar{ flex-direction:column; align-items:flex-start; gap:10px; margin-top: 300px; }
+    .title{ font-size:16px; }
+    .controls{ width:100%; justify-content:space-between; }
+    button{ padding:10px 14px; font-size:12px; flex:1; text-align:center; }
+    .speed-wrap{ order:3; width:100%; justify-content:space-between; }
+    input[type=range]{ flex:1; width:auto; }
+    .grid{ font-size:11px; }
+    .status-row{ font-size:11px; }
+    pre.code{ font-size:11px; }
+    .code .line{ padding:1px 12px; }
+    .code .ln{ width:18px; margin-right:8px; }
+    .editor-footer{ padding:18px 14px 20px; }
+    .ef-title{ font-size:15px; }
+  }
+  @media (max-width: 340px){
+    pre.code{ font-size:10px; }
+  }
+</style>
+</head>
+<body>
+<div class="app">
+  <h2 class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);">
+    Animated bubble sort visualization: columns of ASCII blocks are compared and swapped in a TUI-style terminal grid, with a synced Python code panel and sound effects.
+  </h2>
+
+  <div class="topbar">
+    <div class="title">Bubble Sort</div>
+    <div class="controls">
+      <div class="speed-wrap">
+        <span>Speed</span>
+        <input type="range" id="speed" min="1" max="5" value="3" step="1">
+      </div>
+      <button id="soundBtn">Sound: on</button>
+      <button id="shuffleBtn">Shuffle</button>
+      <button id="playBtn">Play</button>
+    </div>
+  </div>
+
+  <div class="stage">
+    <pre class="grid" id="grid" aria-hidden="true"></pre>
+    <div class="status-row">
+      <div>Comparisons <span class="metric" id="compCount">0</span></div>
+      <div>Swaps <span class="metric" id="swapCount">0</span></div>
+      <div class="badge" id="statusText">Ready</div>
+    </div>
+  </div>
+
+  <div class="editor">
+    <div class="editor-bar">
+      <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
+      <span class="fname">bubble_sort.py</span>
+    </div>
+    <pre class="code" id="codeBlock"></pre>
+    <div class="editor-footer">
+      <div class="ef-title">bubble sort</div>
+      <div class="ef-handle">youtube.com/@arfyslowy</div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* indent = number of 4-space levels; html = code content without leading spaces.
+   Type hints included per the standard library typing conventions. */
+const codeLines = [
+  {n:1, indent:0, html:'<span class="kw">def</span> <span class="fn">bubble_sort</span>(arr: <span class="ty">list</span>[<span class="ty">int</span>]) -&gt; <span class="ty">list</span>[<span class="ty">int</span>]:'},
+  {n:2, indent:1, html:'n: <span class="ty">int</span> = <span class="fn">len</span>(arr)'},
+  {n:3, indent:1, html:'<span class="kw">for</span> i <span class="kw">in</span> <span class="fn">range</span>(n):'},
+  {n:4, indent:2, html:'<span class="kw">for</span> j <span class="kw">in</span> <span class="fn">range</span>(n - i - 1):'},
+  {n:5, indent:3, html:'<span class="kw">if</span> arr[j] <span class="op">&gt;</span> arr[j + 1]:'},
+  {n:6, indent:4, html:'arr[j], arr[j + 1] = arr[j + 1], arr[j]  <span class="cm"># swap</span>'},
+  {n:7, indent:1, html:'<span class="kw">return</span> arr'},
+];
+
+const codeBlock = document.getElementById('codeBlock');
+codeBlock.innerHTML = codeLines.map(l =>
+  `<span class="line" data-line="${l.n}"><span class="ln">${l.n}</span>${'    '.repeat(l.indent)}${l.html}</span>`
+).join('\n');
+
+function highlightLine(n){
+  document.querySelectorAll('.code .line').forEach(el=>{
+    el.classList.toggle('active', Number(el.dataset.line) === n);
+  });
+}
+
+const gridEl = document.getElementById('grid');
+const compCountEl = document.getElementById('compCount');
+const swapCountEl = document.getElementById('swapCount');
+const statusText = document.getElementById('statusText');
+const playBtn = document.getElementById('playBtn');
+const shuffleBtn = document.getElementById('shuffleBtn');
+const soundBtn = document.getElementById('soundBtn');
+const speedSlider = document.getElementById('speed');
+
+const N = 10;
+let arr = [];
+let doneFlags = [];
+let playing = false;
+let sortGenerator = null;
+let timer = null;
+let comparisons = 0;
+let swaps = 0;
+
+/* --- sound engine (Web Audio, no external files) --- */
+let soundOn = true;
+let audioCtx = null;
+
+function getCtx(){
+  if(!audioCtx){
+    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  }
+  if(audioCtx.state === 'suspended') audioCtx.resume();
+  return audioCtx;
+}
+
+function playTone(freq, dur, type, gainVal){
+  if(!soundOn) return;
+  const ctx = getCtx();
+  const osc = ctx.createOscillator();
+  const g = ctx.createGain();
+  osc.type = type;
+  osc.frequency.value = freq;
+  g.gain.value = gainVal;
+  osc.connect(g);
+  g.connect(ctx.destination);
+  const now = ctx.currentTime;
+  osc.start(now);
+  g.gain.exponentialRampToValueAtTime(0.0001, now + dur);
+  osc.stop(now + dur + 0.02);
+}
+
+function sfxCompare(){ playTone(760, 0.05, 'sine', 0.05); }
+function sfxClick(){ playTone(500, 0.04, 'square', 0.04); }
+function sfxDone(){
+  [523, 659, 784, 1046].forEach((f, idx)=>{
+    setTimeout(()=>playTone(f, 0.16, 'sine', 0.07), idx * 90);
+  });
+}
+
+soundBtn.addEventListener('click', ()=>{
+  soundOn = !soundOn;
+  soundBtn.textContent = soundOn ? 'Sound: on' : 'Sound: off';
+  soundBtn.classList.toggle('muted', !soundOn);
+  if(soundOn){ getCtx(); sfxClick(); }
+});
+
+function randomArray(){
+  const a = [];
+  for(let i=0;i<N;i++) a.push(Math.floor(Math.random()*90)+10);
+  return a;
+}
+
+function draw(ci, cj){
+  ci = ci ?? -1; cj = cj ?? -1;
+  let out = '';
+  for(let r=10; r>0; r--){
+    for(let i=0;i<N;i++){
+      const cls = (i===ci || i===cj) ? 'c' : doneFlags[i] ? 's' : '';
+      const fill = Math.round(arr[i]/10) >= r ? '██' : '  ';
+      out += `<b${cls ? ` class="${cls}"` : ''}>${fill} </b>`;
+    }
+    out += '\n';
+  }
+  out += `└${'─'.repeat(N*3-2)}┘`;
+  gridEl.innerHTML = out;
+}
+
+function getDelay(){
+  return Math.max(620 - (Number(speedSlider.value) * 100), 80);
+}
+
+function* bubbleSortSteps(a){
+  const n = a.length;
+  for(let i=0;i<n;i++){
+    yield {type:'line', n:3};
+    for(let j=0;j<n-i-1;j++){
+      yield {type:'line', n:4};
+      yield {type:'compare', i:j, j:j+1};
+      comparisons++;
+      compCountEl.textContent = comparisons;
+      if(a[j] > a[j+1]){
+        yield {type:'line', n:6};
+        const tmp = a[j]; a[j]=a[j+1]; a[j+1]=tmp;
+        yield {type:'swap', i:j, j:j+1};
+        swaps++;
+        swapCountEl.textContent = swaps;
+      }
+      yield {type:'uncompare', i:j, j:j+1};
+    }
+    yield {type:'sorted', i:n-i-1};
+  }
+  yield {type:'done'};
+}
+
+function step(){
+  const {value, done} = sortGenerator.next();
+  if(done){ finish(); return; }
+
+  switch(value.type){
+    case 'line':
+      highlightLine(value.n);
+      break;
+    case 'compare':
+      highlightLine(5);
+      sfxCompare();
+      draw(value.i, value.j);
+      break;
+    case 'swap': /* generator already mutated arr (same reference) */
+      draw(value.i, value.j);
+      break;
+    case 'uncompare':
+      draw();
+      break;
+    case 'sorted':
+      doneFlags[value.i] = true;
+      draw();
+      break;
+  }
+  timer = setTimeout(step, getDelay());
+}
+
+function finish(){
+  playing = false;
+  playBtn.textContent = 'Play';
+  statusText.textContent = 'Sorted';
+  highlightLine(7);
+  doneFlags.fill(true);
+  draw();
+  sfxDone();
+}
+
+function startSort(){
+  getCtx();
+  if(!sortGenerator){
+    sortGenerator = bubbleSortSteps(arr);
+  }
+  playing = true;
+  playBtn.textContent = 'Pause';
+  statusText.textContent = 'Sorting…';
+  sfxClick();
+  step();
+}
+
+function pauseSort(){
+  playing = false;
+  playBtn.textContent = 'Play';
+  statusText.textContent = 'Paused';
+  clearTimeout(timer);
+  sfxClick();
+}
+
+function reset(){
+  clearTimeout(timer);
+  sortGenerator = null;
+  playing = false;
+  comparisons = 0; swaps = 0;
+  compCountEl.textContent = 0;
+  swapCountEl.textContent = 0;
+  playBtn.textContent = 'Play';
+  statusText.textContent = 'Ready';
+  highlightLine(1);
+  arr = randomArray();
+  doneFlags = new Array(N).fill(false);
+  draw();
+  sfxClick();
+}
+
+playBtn.addEventListener('click', ()=>{
+  if(playing){ pauseSort(); }
+  else{ startSort(); }
+});
+
+shuffleBtn.addEventListener('click', reset);
+
+reset();
+</script>
+</body>
+</html>

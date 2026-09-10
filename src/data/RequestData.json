@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Tutorial Rust",
+    "nominal": 320000
+  },
+  {
+    "name": "Tutorial Gleam",
+    "nominal": 25000
+  },
+  {
+    "name": "Membership Content",
+    "nominal": 0
+  },
+
+  {
+    "name": "Membership Content",
+    "nominal": 0
+  }, 
+
+  {
+    "name": "Membership Content",
+    "nominal": 0
+  },
+
+  {
+    "name": "Tutorial Python Lanjutan",
+    "nominal": 0
+  },
+  {
+    "name": "Tutorial Data structure Algorithm",
+    "nominal": 0
+  },
+  {
+    "name": "Tutorial Golang",
+    "nominal": 0
+  }
+]

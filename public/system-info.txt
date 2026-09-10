@@ -1,0 +1,13 @@
+               
+               os     EndeavourOS x86_64
+               ker    7.1.8-1-cachyos
+     •_•       pkgs   1568 (9 flatpaks)
+     oo|       sh     fish
+    / '\'      ram    4857 / 63627 MB
+   (\_;/)      init   systemd
+               de/wm  bspwm
+               up     6 hours, 52 minutes
+               disk   103G / 993 (ext4)
+               
+        󰮯  󰊠  󰊠  󰊠  󰊠  
+               
