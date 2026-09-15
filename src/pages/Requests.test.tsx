@@ -11,7 +11,7 @@ describe("formatRp", () => {
   test("renders request list with nominal", () => {
     render(<Requests />);
     expect(screen.getByText(/MEMBER REQUESTS/)).toBeInTheDocument();
-    expect(screen.getByText(/ahmad fauzi/i)).toBeInTheDocument();
-    expect(screen.getByText(/2\.500\.000/)).toBeInTheDocument();
+    expect(screen.getByText(/tutorial rust/i)).toBeInTheDocument();
+    expect(screen.getByText(/320\.000/i)).toBeInTheDocument();
   });
 });

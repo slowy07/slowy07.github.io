@@ -4,6 +4,7 @@ import datas from "../data/RequestData.json";
 type Request = {
   name: string;
   nominal: number;
+  note?: string;
 };
 
 export function formatRp(nominal: number): string {
@@ -42,6 +43,16 @@ export default function Requests() {
               <div className="border-t border-net-line pt-2 text-net-gray text-[10px] space-y-1">
                 <p>SOURCE: STATIC JSON</p>
                 <p>UPDATE: REBUILD TO REFRESH</p>
+              </div>
+              <div className="border-t border-net-line pt-2 text-net-gray text-[10px] space-y-1">
+                <p>NOTES:</p>
+                {[...new Set(requests.map((r) => r.note).filter(Boolean))].map(
+                  (note) => (
+                    <p key={note} className="break-words text-net-ink glow">
+                      &gt; {note}
+                    </p>
+                  )
+                )}
               </div>
             </div>
           </div>
