@@ -13,11 +13,6 @@
     "nominal": 25000,
     "note": "terima kasih atas support dari temen-temen warga slowy, semakin donet semakin cepat antrian diproses 😹"
   },
-
-  {
-    "name": "[LIVE] Seputaran Dynamic Programming",
-    "nominal": 25000
-  },
   
   {
     "name": "Membership Content",
@@ -46,16 +41,14 @@
     "name": "Tutorial C#",
     "nominal": 0
   },
+
   {
     "name": "Tutorial C Lanjutan",
     "nominal": 0
   },
+
   {
     "name": "Seputar Arsitektur Komputer",
-    "nominal": 0
-  },
-  {
-    "name": "Python Lanjutan (Asyncio)",
     "nominal": 0
   }
 ]
