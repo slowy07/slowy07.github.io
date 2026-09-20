@@ -1,27 +1,19 @@
 [
   {
-    "title": "Seraphine",
-    "description": "List of all reinforcement learning agents",
-    "technology": "Python",
-    "visibleProject": "Private",
-    "image": "../projects/seraphine.webp",
-    "link": "#wip"
-  },
-  {
-    "title": "Mary",
-    "description": "environment decision making in autonomous cars",
-    "technology": "Python",
-    "visibleProject": "Private",
-    "image": "../projects/mary.webp",
-    "link": "#wip"
-  },
-  {
-    "title": "Aiden",
-    "description": "Make Simple x86_64 emulator",
-    "technology": "C",
-    "visibleProject": "Private",
+    "title": "LunaOS",
+    "description": "Operating System (Hobby) Written with Assembly (x86_64)",
+    "technology": "Assembly",
+    "visibleProject": "Public",
     "image": "../projects/aiden.webp",
-    "link": "#wip"
+    "link": "https://github.com/slowy07/LunaOs"
+  },
+  {
+    "title": "MeiDB",
+    "description": "LightWeight DB Engine",
+    "technology": "C",
+    "visibleProject": "Public",
+    "image": "https://i.pinimg.com/736x/b3/2c/c9/b32cc90fe5d31fbb9c02e7b69ec1b1eb.jpg",
+    "link": "https://codeberg.org/slowy07/meiDB"
   },
   {
     "title": "Clara",
@@ -46,21 +38,5 @@
     "visibleProject": "Public",
     "image": "../projects/molly.png",
     "link": "https://github.com/slowy07/molly"
-  },
-  {
-    "title": "Claire",
-    "description": "Develop library used for provided tensor type for deep learning, focus will be on BLAS and GPU support",
-    "technology": "Nim",
-    "visibleProject": "Public",
-    "image": "../projects/claire.png",
-    "link": "https://github.com/slowy07/claire"
-  },
-  {
-    "title": "Haley",
-    "description": "Create x64 kernel written with assembly",
-    "technology": "Assembly",
-    "visibleProject": "Public",
-    "image": "../projects/haley.png",
-    "link": "https://github.com/slowy07/haley"
   }
 ]
