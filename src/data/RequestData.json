@@ -6,15 +6,14 @@
   },
 
   {
+    "name": "Tutorial C Lanjutan",
+    "nominal": 300000
+  },
+
+  {
     "name": "Tutorial Golang",
     "nominal": 170000
   },
-
-   {
-    "name": "Tutorial C Lanjutan",
-    "nominal": 100000
-  },
-
   
   {
     "name": "Review Gleam",
