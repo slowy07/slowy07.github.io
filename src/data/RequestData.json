@@ -4,17 +4,24 @@
     "name": "Tutorial Typescript",
     "nominal": 30000
   },
+
+  {
+    "name": "Tutorial Golang",
+    "nominal": 170000
+  },
+
+   {
+    "name": "Tutorial C Lanjutan",
+    "nominal": 100000
+  },
+
+  
   {
     "name": "Review Gleam",
     "nominal": 25000,
     "note": "terima kasih atas support dari temen-temen warga slowy, semakin donet semakin cepat antrian diproses 😹"
   },
 
-  {
-    "name": "Tutorial Golang",
-    "nominal": 20000
-  },
-  
   {
     "name": "Membership Content",
     "nominal": 0
@@ -33,18 +40,9 @@
     "name": "Tutorial Data structure Algorithm",
     "nominal": 0
   },
-  {
-    "name": "Tutorial Golang",
-    "nominal": 0
-  },
 
   {
     "name": "Tutorial C#",
-    "nominal": 0
-  },
-
-  {
-    "name": "Tutorial C Lanjutan",
     "nominal": 0
   },
 
