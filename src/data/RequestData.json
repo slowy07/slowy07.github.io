@@ -16,6 +16,11 @@
   },
 
   {
+    "name": "software engineering",
+    "nominal": 10000
+  },
+
+  {
     "name": "Membership Content",
     "nominal": 0
   },
