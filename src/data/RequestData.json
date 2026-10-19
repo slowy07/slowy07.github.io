@@ -1,7 +1,17 @@
  [
   {
     "name": "Tutorial C Lanjutan (PUBLIC)",
-    "nominal": 640000
+    "nominal": 675000
+  },
+
+   {
+    "name": "Tutorial Data structure Algorithm",
+    "nominal": 100000
+  },
+
+  {
+    "name": "software engineering",
+    "nominal": 45000
   },
   
   {
@@ -9,10 +19,9 @@
     "nominal": 25000,
     "note": "terima kasih atas support dari temen-temen warga slowy, semakin donet semakin cepat antrian diproses 😹"
   },
-
-  {
-    "name": "software engineering",
-    "nominal": 10000
+    {
+    "name": "Tutorial Kuning",
+    "nominal": 15000
   },
 
   {
@@ -29,18 +38,9 @@
     "name": "Membership Content",
     "nominal": 0
   },
-  {
-    "name": "Tutorial Data structure Algorithm",
-    "nominal": 0
-  },
 
   {
     "name": "Tutorial C#",
-    "nominal": 0
-  },
-
-  {
-    "name": "Seputar Arsitektur Komputer",
     "nominal": 0
   },
   {
