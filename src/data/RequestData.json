@@ -1,9 +1,4 @@
  [
-  {
-    "name": "Tutorial C Lanjutan (PUBLIC)",
-    "nominal": 675000
-  },
-
    {
     "name": "Tutorial Data structure Algorithm",
     "nominal": 100000
@@ -16,8 +11,7 @@
   
   {
     "name": "Review Gleam",
-    "nominal": 25000,
-    "note": "terima kasih atas support dari temen-temen warga slowy, semakin donet semakin cepat antrian diproses 😹"
+    "nominal": 25000
   },
     {
     "name": "Tutorial Kuning",
@@ -53,6 +47,10 @@
   },
   {
     "name": "Java Springboot",
+    "nominal": 0
+  },
+  {
+    "name": "Tutorial C#",
     "nominal": 0
   }
 ]
