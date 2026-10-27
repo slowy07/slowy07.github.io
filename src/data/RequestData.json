@@ -17,6 +17,10 @@
     "name": "Tutorial Kuning",
     "nominal": 15000
   },
+  {
+    "name": "Tutorial MISRA",
+    "nominal": 0
+  },
 
   {
     "name": "Membership Content",
