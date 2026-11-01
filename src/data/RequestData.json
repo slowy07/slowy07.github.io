@@ -1,4 +1,8 @@
  [
+    {
+    "name": "Tutorial MISRA",
+    "nominal": 300000
+  },
    {
     "name": "Tutorial Data structure Algorithm",
     "nominal": 100000
@@ -21,10 +25,6 @@
     {
     "name": "Tutorial Kuning",
     "nominal": 15000
-  },
-  {
-    "name": "Tutorial MISRA",
-    "nominal": 0
   },
 
   {
