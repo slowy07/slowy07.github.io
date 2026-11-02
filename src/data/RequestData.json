@@ -9,6 +9,11 @@
   },
 
   {
+    "name": "Tutorial Rust Lanjutan",
+    "nominal": 250000
+  },
+
+  {
     "name": "Content microservice 1 dari google",
     "nominal": 100000
   },
@@ -56,10 +61,6 @@
   },
   {
     "name": "Java Springboot",
-    "nominal": 0
-  },
-  {
-    "name": "Tutorial Lanjuta bahasa Rust",
     "nominal": 0
   },
   {
