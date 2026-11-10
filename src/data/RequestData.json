@@ -3,10 +3,6 @@
     "name": "Tutorial MISRA",
     "nominal": 500000
   },
-   {
-    "name": "Tutorial Data structure Algorithm",
-    "nominal": 100000
-  },
 
   {
     "name": "Tutorial Rust Lanjutan",
@@ -33,7 +29,7 @@
   },
 
   {
-    "name": "Membership Content",
+    "name": "Membership Content (Buat Hexdump)",
     "nominal": 0
   },
 
@@ -69,6 +65,10 @@
   },
   {
     "name": "Tutorial Linux Untuk Ganti dari windows",
+    "nominal": 0
+  },
+  {
+    "name": "Materi Seputaran Cache-Conscious Programming & False Sharing",
     "nominal": 0
   }
 ]
