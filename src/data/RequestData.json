@@ -70,5 +70,9 @@
   {
     "name": "Materi Seputaran Cache-Conscious Programming & False Sharing",
     "nominal": 0
+  },
+  {
+    "name": "Tutorial Cuda (setelah materi arsitektur komputer)",
+    "nominal": 0
   }
 ]
