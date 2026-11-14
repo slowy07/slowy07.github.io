@@ -1,9 +1,4 @@
  [
-    {
-    "name": "Tutorial MISRA",
-    "nominal": 500000
-  },
-
   {
     "name": "Tutorial Rust Lanjutan",
     "nominal": 250000
