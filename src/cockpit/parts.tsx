@@ -168,6 +168,42 @@ export function InstrumentPanel({
 
 /* ------------------------------------------------------------- rotary knob */
 
+let audio: AudioContext | null = null;
+
+/* short filtered noise burst = mechanical detent click */
+function detentClick() {
+  const Ctx =
+    window.AudioContext ||
+    (window as unknown as { webkitAudioContext?: typeof AudioContext })
+      .webkitAudioContext;
+  if (!Ctx) return;
+
+  audio ??= new Ctx();
+  if (audio.state === "suspended") void audio.resume();
+
+  const rate = audio.sampleRate;
+  const frames = Math.floor(rate * 0.018);
+  const buffer = audio.createBuffer(1, frames, rate);
+  const data = buffer.getChannelData(0);
+  for (let i = 0; i < frames; i += 1) {
+    data[i] = (Math.random() * 2 - 1) * (1 - i / frames) ** 3;
+  }
+
+  const source = audio.createBufferSource();
+  source.buffer = buffer;
+
+  const filter = audio.createBiquadFilter();
+  filter.type = "bandpass";
+  filter.frequency.value = 2200;
+  filter.Q.value = 1.4;
+
+  const gain = audio.createGain();
+  gain.gain.value = 0.16;
+
+  source.connect(filter).connect(gain).connect(audio.destination);
+  source.start();
+}
+
 export function RotaryKnob({
   active,
   onSelect,
@@ -185,6 +221,7 @@ export function RotaryKnob({
   const lastWheel = useRef(0);
 
   const step = (direction: number) => {
+    detentClick();
     const next =
       (index + direction + SECTIONS.length) % SECTIONS.length;
     onSelect(SECTIONS[next].id);
@@ -248,31 +285,84 @@ export function RotaryKnob({
           <circle
             cx="50"
             cy="50"
-            r="45"
-            fill="none"
-            stroke="#8a7a4a"
-            strokeWidth="1.5"
-          />
-          <circle
-            cx="50"
-            cy="50"
-            r="37"
+            r="48"
             fill="#0d0b08"
             stroke="#8a7a4a"
-            strokeWidth="1.5"
+            strokeWidth="1"
           />
+          {Array.from({ length: 30 }, (_, knurl) => (
+            <line
+              key={`knurl-${knurl}`}
+              x1="50"
+              y1="3"
+              x2="50"
+              y2="6"
+              stroke="#8a7a4a"
+              strokeWidth="1"
+              opacity="0.6"
+              transform={`rotate(${knurl * 12} 50 50)`}
+            />
+          ))}
+
           {SECTIONS.map((section, tick) => (
             <line
-              key={section.id}
+              key={`tick-${section.id}`}
               x1="50"
               y1="7"
               x2="50"
-              y2={tick === index ? "15" : "12"}
+              y2={tick === index ? "13" : "11"}
               stroke={tick === index ? "#e8d27a" : "#8a7a4a"}
-              strokeWidth={tick === index ? 2.5 : 1}
+              strokeWidth={tick === index ? 2 : 1}
               transform={`rotate(${tick * 72} 50 50)`}
             />
           ))}
+          {SECTIONS.map((section, tick) => {
+            const angle = ((tick * 72 - 90) * Math.PI) / 180;
+            return (
+              <text
+                key={`num-${section.id}`}
+                x={50 + Math.cos(angle) * 33}
+                y={50 + Math.sin(angle) * 33 + 2.2}
+                textAnchor="middle"
+                fontSize="7"
+                fill={tick === index ? "#e8d27a" : "#8a7a4a"}
+              >
+                {tick + 1}
+              </text>
+            );
+          })}
+
+          <circle
+            cx="50"
+            cy="50"
+            r="27"
+            fill="#14110d"
+            stroke="#8a7a4a"
+            strokeWidth="1.5"
+          />
+          {Array.from({ length: 24 }, (_, grip) => (
+            <line
+              key={`grip-${grip}`}
+              x1="50"
+              y1="23"
+              x2="50"
+              y2="26"
+              stroke="#8a7a4a"
+              strokeWidth="1"
+              opacity="0.5"
+              transform={`rotate(${grip * 15} 50 50)`}
+            />
+          ))}
+          <circle
+            cx="50"
+            cy="50"
+            r="21"
+            fill="none"
+            stroke="#8a7a4a"
+            strokeWidth="0.75"
+            opacity="0.65"
+          />
+
           <g
             className="knob-notch"
             style={{
@@ -280,16 +370,18 @@ export function RotaryKnob({
               transformOrigin: "50px 50px",
             }}
           >
-            <rect x="48.5" y="19" width="3" height="19" fill="#e8d27a" />
+            <path d="M47 44L48.2 26H51.8L53 44Z" fill="#e8d27a" />
           </g>
+
           <circle
             cx="50"
             cy="50"
-            r="6"
+            r="6.5"
             fill="#e8d27a"
             stroke="#8a7a4a"
             strokeWidth="1"
           />
+          <circle cx="50" cy="50" r="2.2" fill="#0d0b08" />
         </svg>
       </button>
       <span className="knob-readout">{SECTIONS[index].code} / 05</span>
