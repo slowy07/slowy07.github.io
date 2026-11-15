@@ -6,13 +6,26 @@ export default {
   theme: {
     extend: {
       colors: {
+        cockpit: {
+          bg: "#080808",
+          panel: "#14110d",
+          sub: "#0d0b08",
+          key: "#e8d27a",
+          pressed: "#b8a24f",
+          line: "#8a7a4a",
+          crt: "#02060a",
+          cyan: "#3fc1e0",
+          green: "#6fbf73",
+          red: "#d63a2f",
+        },
+        // legacy aliases kept so older page modules still resolve
         net: {
           bg: "#080808",
-          panel: "#111111",
-          line: "#303030",
-          ink: "#E8E8E0",
-          gray: "#8A8A84",
-          paper: "#F2F2EA",
+          panel: "#14110d",
+          line: "#8a7a4a",
+          ink: "#e8d27a",
+          gray: "#8a7a4a",
+          paper: "#e8d27a",
         },
       },
     },
