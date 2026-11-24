@@ -69,5 +69,9 @@
   {
     "name": "Tutorial Cuda (setelah materi arsitektur komputer)",
     "nominal": 0
+  },
+  {
+    "name": "Tutorial Golang (Lanjutan)",
+    "nominal": 0
   }
 ]
