@@ -26,7 +26,7 @@ export const PROFILE = {
   domain: "SOFTWARE / DESIGN",
   status: "ACTIVE",
   intro:
-    "Software engineer working across systems programming and AI research. Builds operating systems, database engines, and compilers — and keeps coming back to quantum computing.",
+    "Software engineer into systems and AI stuff. I build OSes, databases, compilers, and I keep circling back to quantum computing.",
   hobbies: ["Coding", "Dota", "Film"],
   languages: [
     "Python",
@@ -49,9 +49,9 @@ export const PROFILE = {
 
 export const ABOUT = {
   paragraphs: [
-    "Software engineer and AI researcher. The work moves between low-level systems — operating systems, database engines, compilers and transpilers — and research-flavoured problems such as quantum computing and geospatial analysis.",
-    "Volunteering has run alongside the engineering: data-flow work for machine-learning projects at Intel, AI-oriented quantitative investment at Microsoft, and interactive geospatial tooling with the Google Earth Engine community and OpenGeos.",
-    "Off the clock: coding, Dota, and film. The learning queue currently holds Nim, quantum computing, and GIS.",
+    "Software engineer and AI researcher. I mostly work on low-level stuff like OSes, databases, and compilers, and I also mess around with quantum computing and geospatial analysis.",
+    "I've also done volunteer work along the way: data-flow stuff for ML projects at Intel, AI-driven quant work at Microsoft, and geospatial tooling with Google Earth Engine and OpenGeos.",
+    "Outside work: coding, Dota, and movies. Right now I'm learning Nim, quantum computing, and GIS.",
   ],
   focus: ["Systems", "AI research", "Quantum computing", "Geospatial"],
 };
@@ -136,7 +136,7 @@ export const EXPERIENCE: ExperienceEntry[] = [
   {
     org: "GOOGLE BRAIN",
     role: "SOFTWARE ENGINEER",
-    period: "2021 — 2023",
+    period: "2021 - 2023",
     type: "WORK",
     detail:
       "Worked on Google Brain, specifically Magenta and TensorFlow. Left in 2023 to step away from the tech industry and restore a healthier work-life balance.",
@@ -145,7 +145,7 @@ export const EXPERIENCE: ExperienceEntry[] = [
   {
     org: "OPENGEOS",
     role: "SOFTWARE ENGINEER · VOLUNTEER",
-    period: "2024 — PRESENT",
+    period: "2024 - PRESENT",
     type: "VOLUNTEER",
     detail:
       "Open-source geospatial software projects developed by a community of geospatial software developers and researchers.",
@@ -163,7 +163,7 @@ export const EXPERIENCE: ExperienceEntry[] = [
   {
     org: "GOOGLE EARTH ENGINE",
     role: "SOFTWARE ENGINEER · VOLUNTEER",
-    period: "2021 — PRESENT",
+    period: "2021 - PRESENT",
     type: "VOLUNTEER",
     detail:
       "Packaging interactive geospatial analysis and visualisation with Google Earth Engine.",
