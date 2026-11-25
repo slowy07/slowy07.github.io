@@ -2,7 +2,7 @@ import { ABOUT } from "../data/portfolio";
 
 export default function About() {
   return (
-    <section id="about" aria-labelledby="about-heading" className="border-b border-[var(--line)]">
+    <section id="about" aria-labelledby="about-heading" className="border-b-2 border-[var(--line)]">
       <div className="mx-auto max-w-6xl px-4 py-6 sm:px-6 sm:py-8">
         <div className="grid gap-4 lg:grid-cols-[280px_1fr]">
           <div className="panel flex flex-col justify-between p-6">

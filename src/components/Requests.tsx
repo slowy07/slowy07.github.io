@@ -6,7 +6,7 @@ function rupiah(value: number) {
 
 export default function Requests() {
   return (
-    <section id="requests" aria-labelledby="requests-heading" className="border-b border-[var(--line)]">
+    <section id="requests" aria-labelledby="requests-heading" className="border-b-2 border-[var(--line)]">
       <div className="mx-auto max-w-6xl px-4 py-6 sm:px-6 sm:py-8">
         <div className="grid gap-4 lg:grid-cols-[280px_1fr]">
           <div className="panel p-6 sm:p-8">
@@ -25,7 +25,7 @@ export default function Requests() {
           </div>
 
           <div className="panel-cut p-4 sm:p-6">
-            <div className="mb-4 flex items-center justify-between gap-4 border-b border-[var(--line)] pb-4">
+            <div className="mb-4 flex items-center justify-between gap-4 border-b-2 border-[var(--line)] pb-4">
               <p className="label-mono">Support Log</p>
               <p className="label-mono">{REQUESTS.length} records</p>
             </div>

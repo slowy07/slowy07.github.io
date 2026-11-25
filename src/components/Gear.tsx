@@ -2,7 +2,7 @@ import { GEAR } from "../data/portfolio";
 
 export default function Gear() {
   return (
-    <section id="gear" aria-labelledby="gear-heading" className="border-b border-[var(--line)]">
+    <section id="gear" aria-labelledby="gear-heading" className="border-b-2 border-[var(--line)]">
       <div className="mx-auto max-w-6xl px-4 py-6 sm:px-6 sm:py-8">
         <div className="mb-4 flex flex-wrap items-end justify-between gap-4 border border-[var(--line)] bg-[var(--bg)] p-6">
           <div>

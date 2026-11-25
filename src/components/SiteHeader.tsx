@@ -7,17 +7,17 @@ const links = [
 
 export default function SiteHeader() {
   return (
-    <header className="border-b border-[var(--line)]">
+    <header className="border-b-2 border-[var(--line)] bg-[var(--bg)]">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 sm:px-6">
-        <a href="/#top" className="font-mono text-sm tracking-[0.18em] text-[var(--fg)]">
+        <a href="/#top" className="font-mono text-sm font-bold tracking-[0.18em] text-[var(--fg)]">
           ARFY/SLOWY
         </a>
-        <nav aria-label="Primary" className="flex flex-wrap gap-x-4 gap-y-2">
+        <nav aria-label="Primary" className="flex flex-wrap gap-2">
           {links.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="font-mono text-xs uppercase tracking-[0.14em] text-[var(--muted)] hover:text-[var(--cyan)]"
+              className="border border-[var(--line)] px-2 py-1 font-mono text-xs uppercase tracking-[0.14em] text-[var(--muted)] hover:border-[var(--cyan)] hover:text-[var(--cyan)]"
             >
               {link.label}
             </a>

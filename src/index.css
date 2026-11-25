@@ -61,23 +61,25 @@
 
 @layer components {
   .panel {
-    border: 1px solid var(--line);
+    border: 2px solid var(--line);
     background: color-mix(in srgb, var(--bg) 92%, var(--surface));
+    box-shadow: 4px 4px 0 rgba(45, 52, 55, 0.55);
   }
 
   .panel-cut {
     position: relative;
-    border: 1px solid var(--line);
+    border: 2px solid var(--line);
     background: color-mix(in srgb, var(--bg) 92%, var(--surface));
+    box-shadow: 4px 4px 0 rgba(45, 52, 55, 0.55);
   }
 
   .panel-cut::before {
     content: "";
     position: absolute;
-    top: -1px;
+    top: -2px;
     right: 18px;
-    width: 72px;
-    height: 3px;
+    width: 88px;
+    height: 4px;
     background: var(--cyan);
   }
 

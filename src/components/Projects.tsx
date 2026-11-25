@@ -73,7 +73,7 @@ export default function Projects() {
   };
 
   return (
-    <section id="projects" aria-labelledby="projects-heading" className="border-b border-[var(--line)]">
+    <section id="projects" aria-labelledby="projects-heading" className="border-b-2 border-[var(--line)]">
       <div className="mx-auto max-w-6xl px-4 py-6 sm:px-6 sm:py-8">
         <div className="mb-4 flex flex-wrap items-end justify-between gap-4 border border-[var(--line)] bg-[var(--bg)] p-6">
           <div>
@@ -101,7 +101,7 @@ export default function Projects() {
                   className="group w-full text-left"
                   aria-expanded={isOpen}
                 >
-                  <div className="relative h-44 overflow-hidden border-b border-[var(--line)] bg-[var(--surface)]">
+                  <div className="relative h-44 overflow-hidden border-b-2 border-[var(--line)] bg-[var(--surface)]">
                     <img
                       src={imgSrc(project.image)}
                       alt={`${project.title} banner`}

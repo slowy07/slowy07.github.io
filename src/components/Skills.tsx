@@ -2,7 +2,7 @@ import { SKILL_GROUPS } from "../data/portfolio";
 
 export default function Skills() {
   return (
-    <section id="skills" aria-labelledby="skills-heading" className="border-b border-[var(--line)]">
+    <section id="skills" aria-labelledby="skills-heading" className="border-b-2 border-[var(--line)]">
       <div className="mx-auto max-w-6xl px-4 py-6 sm:px-6 sm:py-8">
         <div className="grid gap-4 lg:grid-cols-[1fr_2fr]">
           <div className="panel p-6 sm:p-8">

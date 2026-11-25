@@ -2,7 +2,7 @@ import { PROFILE } from "../data/portfolio";
 
 export default function Hero() {
   return (
-    <section id="top" className="border-b border-[var(--line)]">
+    <section id="top" className="border-b-2 border-[var(--line)]">
       <div className="mx-auto max-w-6xl px-4 py-6 sm:px-6 sm:py-8">
         <div className="grid gap-4 lg:grid-cols-[1.7fr_1fr]">
           <div className="panel-cut p-6 sm:p-8 lg:p-10">
@@ -25,7 +25,7 @@ export default function Hero() {
                 href={PROFILE.github}
                 target="_blank"
                 rel="noreferrer"
-                className="border border-[var(--cyan)] bg-[var(--cyan)] px-4 py-2 font-mono text-xs uppercase tracking-[0.14em] text-[var(--bg)] hover:bg-transparent hover:text-[var(--cyan)]"
+                className="border-2 border-[var(--cyan)] bg-[var(--cyan)] px-4 py-2 font-mono text-xs font-bold uppercase tracking-[0.14em] text-[var(--bg)] shadow-[4px_4px_0_var(--line)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0_var(--line)] hover:bg-transparent hover:text-[var(--cyan)]"
               >
                 GitHub
               </a>
@@ -33,7 +33,7 @@ export default function Hero() {
                 href={PROFILE.youtube}
                 target="_blank"
                 rel="noreferrer"
-                className="border border-[var(--line)] px-4 py-2 font-mono text-xs uppercase tracking-[0.14em] text-[var(--fg)] hover:border-[var(--yellow)] hover:text-[var(--yellow)]"
+                className="border-2 border-[var(--line)] px-4 py-2 font-mono text-xs font-bold uppercase tracking-[0.14em] text-[var(--fg)] shadow-[4px_4px_0_var(--line)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0_var(--line)] hover:border-[var(--yellow)] hover:text-[var(--yellow)]"
               >
                 YouTube
               </a>
