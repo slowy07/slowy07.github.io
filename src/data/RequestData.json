@@ -31,11 +31,6 @@
   {
     "name": "Membership Content",
     "nominal": 0
-  }, 
-
-  {
-    "name": "Membership Content",
-    "nominal": 0
   },
 
   {
@@ -72,6 +67,18 @@
   },
   {
     "name": "Tutorial Golang (Lanjutan)",
+    "nominal": 0
+  },
+  {
+    "name": "Tutorial Design Pattern C",
+    "nominal": 0
+  },
+  {
+    "name": "Buat Storage Engine Dengan Rust (Membership content)",
+    "nominal": 0
+  },
+  {
+    "name": "Tutorial Java Lanjutan",
     "nominal": 0
   }
 ]
